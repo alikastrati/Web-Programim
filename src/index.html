@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- FONTSs -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Jolly-Lodger">
+</head>
+<body>  
+    
+    <!-- header -->
+    <header class="nav-header">
+        <nav>
+             <div class="navLogo">
+                <p><a href="#">fl<span>oat</a></span></p>
+             </div>
+             
+             <div class="lists" id="myTopNav">
+                    <a href="#" class="active">Home</a>
+                    <a href="#">Movies</a>
+                    <a href="#">TV Shows</a>
+                    <a href="#">Log In</a>
+                    <a href="#">Register</a>
+            
+             </div>
+
+             <div class="hamburger">
+                <span id="openHam" style="color: #000000;">&#9776</span>
+                <span id="closeHam" style="color: #000000;">&#x2716;</span>
+                <script>
+                    let openHam = document.querySelector('#openHam');
+                    let closeHam = document.querySelector('#closeHam');
+                    let navigationItems = document.querySelector('#myTopNav');
+
+                    const hamburgerEvent = (navigation, close, open) => {
+                        navigationItems.style.display = navigation;
+                        closeHam.style.display = close;
+                        openHam.style.display = open;
+                    };
+
+                    openHam.addEventListener('click', () => hamburgerEvent("flex", "block", "none"));
+                    closeHam.addEventListener('click', () => hamburgerEvent("none", "none", "block"));
+                </script>
+             </div>
+
+            
+           
+        </nav>
+       
+    </header>
+
+      
+        
+        
+    
+
+
+    <!-- MAIN -->
+    
+
+
+        
+            
+
+
+ 
+
+
+
+
+</body>
+</html>

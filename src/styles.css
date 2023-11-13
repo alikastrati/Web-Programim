@@ -1,18 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Jolly+Lodger&display=swap');
 
+:root {
+    --swiper-navigation-color: #A98F76;
+  }
+
+*::before, *::after {
+    box-sizing: border-box;
+}
 
 * {
     margin: 0px;
     padding: 0px;
-    background-color: #F1F1F1;
+    background-color: #2a2e3a;
     font-family: 'Kanit';
 }
 
 nav {
     display: flex;
     justify-content: space-around;
-    background-color: #FFFDEF;
+    background-color: #171A23;
     height: 50px;
+    user-select: none;
     
 }
 
@@ -26,7 +34,6 @@ nav {
 .navLogo p,span{
     background-color: inherit;
     display: flex;
-
     font-size: 40px;
     font-family: 'Jolly Lodger';
 
@@ -36,18 +43,19 @@ nav {
     margin-top: 15px;
     align-items: center;
     background-color: inherit;
-    color: black;
+    color: #ffff;
     text-decoration: none;}
 
 
 
-.navLogo span{color: #E70000;}
+.navLogo span{color: #A98F76;}
 
 
 .lists {
     display: flex;
     align-items: center;
     background-color: inherit;
+    transition: height 0.4 ease-in-out;
     }
 
 
@@ -56,7 +64,7 @@ nav {
 .lists a{
     text-decoration: none;
     margin: 30px 20px;
-    color: #E70000;
+    color: #ffffff;
     background-color: inherit;
     font-weight: bold;
     transition: .4s ease-in-out;
@@ -75,7 +83,9 @@ nav {
         display: flex;
         cursor: pointer;
         background-color: inherit;
-        transition: .4s ease-in-out;
+        transition: 0.3s ease-in-out;
+        user-select: none;
+        
     }
 
     .hamburger #closeHam {
@@ -88,18 +98,217 @@ nav {
         align-items: center;
         position: absolute;
         right: 0;
+        height: 0;
         top: 52px;
-        background-color: #E70000;
+        background-color: #171A23;
         width: 100%;
         height: calc(80vh - 50px);
         padding-top: 20px;
         gap: 2vh;
+        z-index: 3;
+        animation: slowChange 1s column ;
+        
+        
     }
 
     .lists a{
         color: #fff;
     }
+
 }
+
+/* SLIDER */
+
+.mainContainer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #171A23;
+    height: 680px;
+
+    
+}
+
+.welcome {
+    margin: 80px 0;
+    width: calc(50% - 40px); 
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+.welcome h1{
+  
+    color: #FFF;
+    font-size: 4rem;
+    margin-left: 20px;
+    background-color: #171A23;}
+.welcome p {
+    color: #FFF;
+    margin-left: 20px;
+    background-color: inherit;}
+
+
+.welcome button{
+    width: 40px;
+    height: 2.5rem;
+    border-radius: .3rem;
+    background-color: #A98F76;
+    font-size: 1rem;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+}
+
+.welcome button:hover {
+    background-color: #da9b9b;
+}
+
+
+
+.swipeContainer {
+    
+    margin: 80px 25px;
+    border: solid;
+    border-radius: 2rem ;
+    width: 50vw;
+    height: 50vh;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    box-shadow: -23px 21px 29px -13px rgba(255,255,255,0.75);
+-webkit-box-shadow: -23px 21px 29px -13px rgba(255,255,255,0.75);
+-moz-box-shadow: -23px 21px 29px -13px rgba(255,255,255,0.75);
+  }
+
+
+  /*  Responistivity for Smaller Screens (First Section - Main) */
+  @media screen and (max-width:600px) {
+    .mainContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .welcome {
+        margin-top: -40px;
+        
+    }
+
+    .welcome h1{margin-left: -115px;}
+    .welcome input {
+        margin-top: 20px;
+        margin-left: -135px;}
+    .welcome p {margin-left: -115px;}
+    .welcome button {
+        width: 150px;
+        margin:14px -15px;}
+   
+       
+    } 
+
+
+  
+  .swipeContainer > ul {
+    margin: 0;
+    padding: 0;
+ 
+    
+  }
+
+  .swipeContainer img{
+    border: solid;
+    border-radius: 2rem ;
+  }
+
+  .swipeContainer li{list-style-type:none;}
+  
+  .swipe {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+    border: solid;
+    border-radius: 2rem ;
+  }
+  
+  .swipe > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .swipe[data-active] {
+    opacity: 0.8;
+    z-index: 1;
+    transition-delay: 50ms;
+  }
+  
+  .swipeContainer-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFFF;
+    cursor: pointer;
+    height: 3rem;
+    border-radius: .50rem;
+    padding: 0 .5rem;
+    background-color: #A98F76;
+    opacity: 0.7;
+  }
+  
+  .swipeContainer-button:hover {
+    background-color: #d8b28f;
+    opacity: 0.8;
+  }
+  .swipeContainer-button:focus {
+    color: white;
+    background-color: #d8b28f;
+    opacity: 0.9;
+  }
+  
+  .swipeContainer-button:focus {
+    outline: 1px solid black;
+  }
+  
+  .swipeContainer-button.prev {
+    left: 1rem;
+  }
+  
+  .swipeContainer-button.next {
+    right: 1rem;
+  }
+
+
+  .searchBar {
+    background-color: inherit;
+    margin-left: 20px;
+    margin-top: 18px;
+  }
+
+.searchBar input {
+    width: 450px;
+    height: 40px;
+    border-radius: 0.4rem;
+    color: #FFF;
+    background-color: #7c7c7c;
+  }
+
+.searchBar input::placeholder {
+    opacity: 0.4    ;
+    color: white;
+}
+  
+  
+  
+
 
 
 

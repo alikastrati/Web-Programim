@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 
+  
+
     <!-- FONTSs -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet"
@@ -22,7 +24,9 @@
                 <p><a href="#">fl<span>oat</a></span></p>
              </div>
              
-             <div class="lists" id="myTopNav">
+
+       
+                <div class="lists" id="myTopNav">
                     <a href="#" class="active">Home</a>
                     <a href="#">Movies</a>
                     <a href="#">TV Shows</a>
@@ -30,39 +34,80 @@
                     <a href="#">Register</a>
             
              </div>
+         
+           
 
              <div class="hamburger">
-                <span id="openHam" style="color: #000000;">&#9776</span>
-                <span id="closeHam" style="color: #000000;">&#x2716;</span>
-                <script>
-                    let openHam = document.querySelector('#openHam');
-                    let closeHam = document.querySelector('#closeHam');
-                    let navigationItems = document.querySelector('#myTopNav');
-
-                    const hamburgerEvent = (navigation, close, open) => {
-                        navigationItems.style.display = navigation;
-                        closeHam.style.display = close;
-                        openHam.style.display = open;
-                    };
-
-                    openHam.addEventListener('click', () => hamburgerEvent("flex", "block", "none"));
-                    closeHam.addEventListener('click', () => hamburgerEvent("none", "none", "block"));
-                </script>
-             </div>
-
+                <span id="openHam" style="color: #FFFF;">&#9776</span>
+                <span id="closeHam" style="color: #FFFF;">&#x2716;</span>
             
-           
+             </div>
         </nav>
-       
+        
     </header>
+
+
+
+    <main id="index">
+    
+
+          <section class="mainContainer">
+            
+            <div class="swipeContainer" data-carousel>
+
+              <button class="swipeContainer-button prev" data-swipe-button="prev">&#8678;</button>
+              <button class="swipeContainer-button next" data-swipe-button="next">&#8680;</button>
+               
+              
+              <ul data-slides>
+                
+                <li class="swipe" data-active>
+                  <img src="https://www.dotyeti.com/wp-content/uploads/2023/01/spiderman-709x1024.jpg" alt="Nature Image #1">           
+                </li>
+                
+                <li class="swipe">
+                  <img src="https://www.dotyeti.com/wp-content/uploads/2023/01/image4-1-707x1024.jpg"alt="Nature Image #2">
+                  <div class="overlay">
+                    
+                  </div>
+                </li>
+
+                <li class="swipe">
+                  <img src="https://www.dotyeti.com/wp-content/uploads/2023/01/image3-1-691x1024.jpg" alt="Nature Image #3">
+                </li>
+
+              </ul>
+            </div>
+
+
+            <div class="welcome">
+                <h1>Welcome</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste culpa asperiores dignissimos omnis ut? Odit?</p>
+                <div class="searchBar">
+                    <input type="text" name="searchBar" id="searchId" placeholder="Search Movie/TV Show/Actor">
+                    <button type="submit" id="searchMain">Go</button>
+                </div>
+                
+            </div>
+
+                    
+          </section>
+
+         
+
+          
+        
+    </main>
+
+
+
+  
 
       
         
         
     
 
-
-    <!-- MAIN -->
     
 
 
@@ -75,5 +120,48 @@
 
 
 
+
+
+
+
+    <script>
+        const buttons = document.querySelectorAll("[data-swipe-button]")
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                const offset = button.dataset.swipeContainer === "next" ? 1 : -1 
+                const slides = button.closest("[data-carousel]").querySelector('[data-slides]')
+                const activeSlide = slides.querySelector("[data-active]")
+                let newIndex = [...slides.children].indexOf(activeSlide) + offset
+
+                if(newIndex < 0) newIndex = slides.children.length - 1
+                if(newIndex >= slides.children.length) newIndex = 0
+
+                slides.children[newIndex].dataset.active = true
+                delete activeSlide.dataset.active
+            })
+        })
+    </script>
+
+
+  
+
+
+    <!-- Hamburger Menu Script-->
+    <script>
+        let openHam = document.querySelector('#openHam');
+        let closeHam = document.querySelector('#closeHam');
+        let navigationItems = document.querySelector('#myTopNav');
+    
+        const hamburgerEvent = (navigation, close, open) => {
+            navigationItems.style.display = navigation;
+            closeHam.style.display = close;
+            openHam.style.display = open;
+            
+        };
+    
+        openHam.addEventListener('click', () => hamburgerEvent("flex", "block", "none"));
+        closeHam.addEventListener('click', () => hamburgerEvent("none", "none", "block"));
+    </script>
 </body>
+
 </html>

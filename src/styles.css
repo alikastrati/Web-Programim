@@ -15,6 +15,7 @@
     font-family: 'Kanit';
 }
 
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -77,6 +78,7 @@ nav {
     color: #fff;
 }
 
+/* Responsitivity per Hamburger Menu (Smaller Devices) */
 
 @media screen and (max-width: 768px){
     .hamburger {
@@ -107,12 +109,14 @@ nav {
         gap: 2vh;
         z-index: 3;
         animation: slowChange 1s column ;
+        border-bottom: 0.4px solid #FFF;
         
         
     }
 
     .lists a{
         color: #fff;
+        font-size: 3vh;
     }
 
 }
@@ -123,45 +127,8 @@ nav {
     display: flex;
     justify-content: space-between;
     background-color: #171A23;
-    height: 680px;
-
-    
+    height: 580px;
 }
-
-.welcome {
-    margin: 80px 0;
-    width: calc(50% - 40px); 
-    background-color: inherit;
-    display: flex;
-    flex-direction: column;
-}
-.welcome h1{
-  
-    color: #FFF;
-    font-size: 4rem;
-    margin-left: 20px;
-    background-color: #171A23;}
-.welcome p {
-    color: #FFF;
-    margin-left: 20px;
-    background-color: inherit;}
-
-
-.welcome button{
-    width: 40px;
-    height: 2.5rem;
-    border-radius: .3rem;
-    background-color: #A98F76;
-    font-size: 1rem;
-    color: #FFF;
-    border: none;
-    cursor: pointer;
-}
-
-.welcome button:hover {
-    background-color: #da9b9b;
-}
-
 
 
 .swipeContainer {
@@ -181,34 +148,6 @@ nav {
   }
 
 
-  /*  Responistivity for Smaller Screens (First Section - Main) */
-  @media screen and (max-width:600px) {
-    .mainContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-    .welcome {
-        margin-top: -40px;
-        
-    }
-
-    .welcome h1{margin-left: -115px;}
-    .welcome input {
-        margin-top: 20px;
-        margin-left: -135px;}
-    .welcome p {margin-left: -115px;}
-    .welcome button {
-        width: 150px;
-        margin:14px -15px;}
-   
-       
-    } 
-
-
-  
   .swipeContainer > ul {
     margin: 0;
     padding: 0;
@@ -222,7 +161,7 @@ nav {
   }
 
   .swipeContainer li{list-style-type:none;}
-  
+
   .swipe {
     position: absolute;
     inset: 0;
@@ -291,12 +230,44 @@ nav {
     background-color: inherit;
     margin-left: 20px;
     margin-top: 18px;
+    
   }
+
+  
+
+  
+/* WELCOME TEXT */
+.mainText {
+  background-color: #171A23;
+}
+
+.textWelcome {
+  margin: 100px 0;
+  background-color: #171A23;
+}
+
+.textWelcome > h1 {font-size: 3rem;}
+
+.textWelcome h1, p {
+  background-color: #171A23;
+  color: #FFF;
+  margin-left: 25px;
+}
+
+.searchBar button {
+  width: 100px;
+  background-color: #d8b28f;
+  font-size: 1.3rem;
+  height: 45px;
+  color: #FFF;
+  border-radius: 10px;
+  
+}
 
 .searchBar input {
     width: 450px;
     height: 40px;
-    border-radius: 0.4rem;
+    border-radius: 0.6rem;
     color: #FFF;
     background-color: #7c7c7c;
   }
@@ -305,26 +276,241 @@ nav {
     opacity: 0.4    ;
     color: white;
 }
+
+
+/*  Responistivity for Smaller Screens (First Section - Main) */
+@media screen and (max-width:900px) {
+  .mainContainer {
+     flex-wrap: wrap;
+     justify-content: center;
+  }
+
+  .mainText {
+    overflow: hidden;
+    margin: -100px 0;
+    width: 1500px;
+    padding: 0px;
+  }
+
+
+
+     
+}
+
+
+@media screen and (max-width:300px) {
+  .mainContainer {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+
+  .mainText {
+    margin: -100px -20px;
+    overflow: hidden;
+    width: 540px;
+  }
+} 
+
+
   
   
-  
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 /* MAIN  */
 
 
+.trendingSection {
+  margin: 30px 0;
+  overflow: hidden;
+
+
+}
+
+.trendingColor {
+  color: #d8b28f;
+  display: inline;
+  font-size: 3rem;
+  font-family: 'Kanit';
+}
+
+.trendingSection > p {
+  font-size: 3rem;
+  margin: 10px 35px;
+  background-color: #2a2e3a;}
+
+.imagesContainer{
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 0 55px;
+    height: 60vh;
+    
+  }
+
+
+.images {
+  display: flex;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  gap: 30px; /* Adjust the value as needed */
+  
+}
+
+.img{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.img img:hover {
+  box-shadow: 16px 3px 29px -2px rgba(169,143,118,0.75);
+-webkit-box-shadow: 16px 3px 29px -2px rgba(169,143,118,0.75);
+-moz-box-shadow: 16px 3px 29px -2px rgba(169,143,118,0.75);
+}
+
+.img a {text-decoration: none;}
+
+.images p {
+  text-align: center;
+  background-color: #2a2e3a;
+  margin-top: 10px;
+  margin-left: 10px;
+  white-space: normal;
+  
+}
+
+
+.images img {
+  height: 50vh;
+  object-fit: cover;
+  border: solid 1px #FFF;
+  
+}
+
+
+.top100imdbSection {
+  margin: 100px 0;
+  overflow: hidden;
+} 
+
+.top100imdbSection > p {
+  font-size: 3rem;
+  margin: 10px 35px;
+  background-color: #2a2e3a;
+}
 
 
 
+
+
+
+
+.containerDescritption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1500px;
+  height: 300px;
+  background-color: #96A4D3;
+  position: relative;
+  margin: 180px auto;
+  color: #ffffff;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 5px 0px rgba(54,143,218,0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(54,143,218,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(54,143,218,0.75);
+  border-radius: 15px;
+}
+
+.containerDescritption:hover {
+  
+}
+
+.containerDescritption p {
+  background-color: inherit ;
+
+  
+}
+
+.containerDescritption p:first-child {
+  font-size: 3rem;
+}
+
+
+.containerDescritption button {
+  padding: 10px 20px;
+  background-color: #d8b28f;
+  font-size: 1rem;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.containerDescritption a{ 
+  background-color: #96A4D3;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+
+
+.footerContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 300px;
+  background-color: #32246c;
+  position: relative;
+  color: #ffffff;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 250px;
+}
+
+
+.leftside {
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+}
+
+.leftside p{background-color: inherit;}
+
+
+.rightSide {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rightSide{background-color: inherit;}
+.rightSide p{
+  margin: 0 40px;
+  background-color: inherit;}

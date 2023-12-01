@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Jolly+Lodger&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Jolly Lodger',Verdana, Geneva, Tahoma, sans-serif;
   font-size: 15px;
+  background-color: #000;
  }
+
+
  body {
      display: flex;
      justify-content: center;
@@ -16,9 +22,9 @@
  
  .wrapper {
      width: 450px;
-     background-color: white;
+     background-color: #171A23;
      border-radius: 10px;
-     color: black;
+     color: #FFF;
      padding: 40px 35px 18px;
      margin: 0 10px;
      box-sizing: border-box;
@@ -30,7 +36,7 @@
     font-size: 36px;
      text-align: center;
      margin-bottom: 20px;
-     color: black;
+     color: #FFF;
  }
  .wrapper .input-box {
      display: flex;
@@ -53,13 +59,13 @@
      border: 1px solid;
      outline: none;
      font-size: 16px;
-     color: black;
+     color: #FFF;
      border-radius: 6px;
      padding: 15px 15px 15px 40px;
  }
  
  .input-box .input-field input::placeholder {
-     color: black; 
+     color: #FFF; 
  }
  .wrapper .btn {
      width: 100%;

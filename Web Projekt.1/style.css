@@ -12,18 +12,25 @@ body {
     min-height: 100vh;
     background-size: cover;
     background-position: center;
+    background-color: #171A23 ;
+    
 }
 
+
+
 .wrapper {
-    width: 750px;
-    background-color: white;
+    width: 650px;
+    height: 650px;
+    background-color: #FFF ;    
     border-radius: 10px;
     color: black;
     padding: 40px 35px 18px;
-    margin: 0 10px;
+    margin: 40px 10px;
     box-sizing: border-box;
     position: relative;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid #A98F76;
+    
 }
 
 .wrapper h1 {
@@ -60,6 +67,7 @@ body {
 
 .input-box .input-field input::placeholder {
     color: black; 
+    opacity: 0.3;
 }
 .input-box .input-field i {
     position: absolute;
@@ -105,7 +113,8 @@ body {
 }
 
 .social-icons {
-    margin: 30px auto;
+    margin-bottom: 30px;
+    margin-top: 10px;
     text-align: center;
 }
 .social-icons img {

@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Jolly+Lodger&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 
+:root {
+  --primary: #111111;
+  --secondary: #171A23;
+  --actionColors: #A98F76;
+
+
+}
+
 
 * {
     margin: 0px;
@@ -18,36 +26,53 @@
   }
 
   *::-webkit-scrollbar-track {
-    background: #111111;
+    background: var(--primary);
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: #171A23;
+    background-color: #FFF;
     border-radius: 13px;
     /* border: 1px solid #ffffff; */
   }
 
 
 body {
-  background-color:  #111111;
+  background-color: var(--primary);
   /* margin: 0 40px; */
 }
 
 nav {
     display: flex;
     justify-content: space-around;
-    background-color: #171A23;
-
-    height: 50px;
+    background-color: var(--secondary);
+    height: 60px;
     user-select: none;
     width: 100%;
     position: fixed;
+    background: linear-gradient(to bottom, rgba(34, 34, 34, 0.8) 40%, rgba(34, 34, 34, 0) 100%);
     z-index: 5;
+    /* opacity: 0.3; */
     
     
     
 }
 
+nav input {
+  padding: 5px;
+  width: 240px;
+  border-radius: 10px;
+  margin-top: 13px;
+  margin-left: 30px;
+}
+
+nav .navLogo .search-field button {
+  padding: 3px;
+  background-color: transparent;
+  width: 3rem;
+  border: none;
+  border-radius: 4px;
+
+}
 
 .navLogo{
     display: flex;
@@ -73,7 +98,7 @@ nav {
 
 
 
-.navLogo span{color: #A98F76;}
+.navLogo span{color: var(--actionColors);}
 
 
 .lists {
@@ -134,7 +159,7 @@ nav {
         right: 0;
         height: 0;
         top: 52px;
-        background-color: #171A23;
+        background-color: var(--secondary);
         width: 100%;
         height: calc(80vh - 50px);
         padding-top: 20px;
@@ -151,14 +176,24 @@ nav {
         font-size: 3vh;
     }
 
+
 }
+
+
+
+
+
+/* MOVIE CAROUSEL SLIDER */
 
 .header-home {
   
   display: flex;
   justify-content: space-between;
-  background-color: #171A23;
+  /* background-color: var(--primary); */
   height: 700px;
+  width: 100%;
+  margin: 0 auto;
+
   
 }
 
@@ -167,77 +202,13 @@ nav {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* SIDE TRENDING SECTION */
-
-.side-section {
-  margin-top: 115px;
-  margin-left: -90px;
-  width: 25%;
-  height: 90vh;
-  margin-right: 40px;
-  padding: 20px;
-  background: -webkit-linear-gradient(#2f2f2f, #171A23);
-  overflow-y: auto; 
-}
-
-.side-image {
-  display: flex;
-  margin-bottom: 20px;
-  margin-left: 30px; 
-
-}
-
-.side-image img {
-  width: 20vh;
-  border: 2px solid #FFF;
-  
-  
-}
-
-#trending {
-  color: #A98F76;
-  margin-bottom: 20px ;
-}
-
-.image-description {
-  color: #fff;
-  width: 195px;
-  margin-top: 80px;
-  margin-left: 10px;
-  text-align: center;
-  font-size: 12px;
-}
-
-.trnd-anchors {
-  text-decoration: none;
-}
-
-
-
-
-
-
-
-/* MOVIE CAROUSEL SLIDER */
-
 .imgContainer {
   display: flex;
-  justify-content: flex-end;
-  width: 70%;
+  justify-content: center;
+  width: 100%;
   height: 65vh;
-  margin-top: 60px;
-  margin-left: 30px;
+  margin: 0;
+  /* margin-left: 30px; */
 
   
 
@@ -259,7 +230,7 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0)-55%, rgba(0, 0, 0, 1.7));
+  background: linear-gradient(to left, rgba(0, 0, 0, 0)-135%, rgba(0, 0, 0, 1.7));
   z-index: 2;
 }
 
@@ -282,7 +253,8 @@ nav {
   
   z-index: 1;
   width: 100%;
-  /* border-radius: 8px; */
+  height: 95vh;
+  object-fit: cover;
  
   
   
@@ -314,7 +286,7 @@ nav {
 
 
 .img-slider .slide .info button{
-  background-color: #A98F76;
+  background-color: var(--actionColors);
   font-size: 15px;
   padding: 3px 25px;
   text-align: center;
@@ -325,7 +297,7 @@ nav {
 }
 
 #watchBtn{
-  background-color: #111111;
+  background-color: var(--primary);
   opacity: 0.5;
   color: #FFF;
 }
@@ -343,24 +315,29 @@ nav {
 
 
 .img-slider .navigation {
-  position: sticky;
-  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(150%);
+  right: 20px; /* Adjust the right distance as needed */
   display: flex;
-  bottom: 0;
-  left: 50%;
+  z-index: 2;
 }
 
 .img-slider .navigation .btn {
-  background: rgba(255, 255 , 255, 0.5);
-  width: 12px;
-  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  width: 30px;
+  height: 30px;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 50%;
   cursor: pointer;
-  
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.img-slider .navigation .btn.active {
+.img-slider .navigation .btn:active {
   background: #FFF;
 }
 
@@ -406,14 +383,6 @@ nav {
   }
 
 
-  .side-section {
-    
-    height: 65vh;
-    margin-right: 10px;
-    padding: 20px;
-    /* background-color: ; */
-    overflow-y: auto; 
-  }
 
 
 
@@ -448,25 +417,8 @@ nav {
   }
 
  
-  .side-section {
-    
-    height: 45vh;
-    margin-right: 10px;
-    margin-top: 30px;
-  }
-
-
-  .side-image {
-    margin-bottom: 20px;
-    margin-left: 10px; 
-  }
   
-  .side-image img {
-    width: 100%;
-    border: 2px solid #FFF;
-    
-    
-  }
+  
   
   
 
@@ -510,17 +462,6 @@ nav {
   }
 
 
-  .side-section {
-    
-    height: 40vh;
-    margin-right: 10px;
-    margin-top: 40px;
-  }
-
-  .side-image img {
-    width: 100%;
-  }
-
 }
 
 
@@ -550,7 +491,7 @@ nav {
   }
 
   .img-slider .slide .info button{
-    background-color: #A98F76;
+    background-color: var(--actionColors);
     font-size: 10px;
     padding: 3px 15px;
     
@@ -568,30 +509,108 @@ nav {
   }
 
 
-  .side-section {
-    
-    height: 20vh;
-    margin-right: 10px;
-    margin-top: 40px;
-  }
-
-  .side-image img {
-    width: 150%;
-    margin-left: -10px;
-  }
-
-  .image-description {
-    margin-left: -10px;
-    font-size: 10px;
-    text-align:left;
-    width: 20%;
-  }
-
-  #trending {
-    font-size: 15px;
-  }
+  
 
 }
+
+/* REVIEWS SECTION */
+
+.reviews .container {
+  /* display: flex; */
+  height: 400px;
+  width: 100%;
+  background-color: #171820;
+
+}
+
+.reviews .container .reviewBoxContainer {display: flex;}
+.reviews .container .reviewNavContainer .nav-review {
+  height: 40px;
+  width: 100%;
+  /* margin-left: 20px; */
+  gap: 50px;
+}
+
+.reviews .container .reviewNavContainer .nav-review a {
+  color: var(--actionColors);
+  padding: 5px;
+  font-weight: 300;
+  border-bottom: solid var(--actionColors);
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.reviews .container .reviewNavContainer .nav-review a:hover {
+  background-color: var(--actionColors);
+  color: #FFF;
+}
+
+
+.reviews .container .reviewBox { 
+  color: #FFF;
+  width: 20%;
+  background: linear-gradient(to bottom, rgba(63, 63, 63, 0.8) 40%, rgba(34, 34, 34, 0) 100%);
+  margin: 30px 30px;}
+.reviews .container .reviewBox .account-nav{
+    display: flex;
+    gap: 20px;
+    margin: 20px 40px 20px;
+  }
+
+.reviews .container .reviewBox .account-nav img{border-radius: 15px;}
+
+
+.reviews .container .reviewBox .review-bottom{
+    display: block;
+    margin-left: 85px;
+    margin-bottom: 30px;
+  }
+.reviews .container .reviewBox .review-bottom p{
+    width: 140px;
+    height: 100px;
+    margin-bottom: 25px;
+    overflow-y: scroll;
+
+}
+.reviews .container .reviewBox .review-bottom button{
+  padding: 5px;
+  color: var(--actionColors);
+  background-color: var(--secondary);
+  border: solid 0.5px;
+
+}
+
+
+.reviews .container .reviewBox .review-bottom button:hover {
+  background-color: var(--actionColors);
+  color: #FFF;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -607,7 +626,7 @@ nav {
 
 .top100 .container {
   
-  margin: 300px auto;
+  margin: 400px auto 130px;
   display: flex;
   overflow-x: auto;
   justify-content: space-evenly;
@@ -621,7 +640,7 @@ nav {
 
 
 .top100 .container::-webkit-scrollbar {
-  height: 10px;
+  height: 1px;
 }
 
  .top100 .container img{
@@ -636,10 +655,10 @@ nav {
 }
 
 .top100 #paragraph {
-  margin-top: -90px;
-  margin-left: 60px;
-  margin-bottom: -285px;
-  color: #A98F76;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: -385px;
+  color: var(--actionColors);
   font-size: 45px;
 
 }
@@ -669,7 +688,7 @@ nav {
   color: white;
   overflow-y: auto;
   height: 800px;
-  margin: 0 60px;
+  
 
 
 }
@@ -690,6 +709,7 @@ nav {
 
 .columnLists .container .tv-show-week,
 .featured-today, .highest-rated, .finished-airing {
+  
   text-align:left;
   
 }
@@ -731,7 +751,7 @@ nav {
   text-decoration: none;
   padding: 10px 25px;
   color: #acacac;
-  background-color: #111111;
+  background-color: var(--primary);
 
 
 } 
@@ -754,7 +774,7 @@ nav {
 
 .join-section .container {
   margin: 150px auto;
-  background-color: #171A23;
+  background-color: var(--secondary);
   width: 100%;
   height: 40vh;
   color: #FFF;

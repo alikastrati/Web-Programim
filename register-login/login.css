@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Jolly+Lodger&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
+
+:root {
+    --primary : #111111;
+}
+
+
 * {
  margin: 0;
  padding: 0;
@@ -12,24 +21,33 @@ body {
     min-height: 100vh;
     background-size: cover;
     background-position: center;
-    background-color: #171A23 ;
+    background-color: #111111 ;
     
 }
 
+form {
+    background-color: var(--primary);
+}
+
+h1 > span {
+    font-family: 'Rubik';
+    font-weight: 1200;
+}
 
 
 .wrapper {
     width: 650px;
-    height: 650px;
-    background-color: #FFF ;    
+    height: 750px;
+    background-color: var(--primary);    
     border-radius: 10px;
     color: black;
     padding: 40px 35px 18px;
-    margin: 40px 10px;
+    margin-top: 40px;
+    margin-left: -30px;
     box-sizing: border-box;
     position: relative;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 3px solid #A98F76;
+    /* border: 3px solid #A98F76; */
     
 }
 
@@ -39,17 +57,21 @@ body {
     margin-bottom: 20px;
     color: black;
 }
+
 .wrapper .input-box {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--primary);
+    
+
 }
 .input-box .input-field {
     position: relative;
     width: 700px;
     height: 50%;
-    background-color: white;
+    border-radius: 6px;
+    background-color: var(--primary);
     margin: 13px 0;
 }
 .input-box .input-field input {
@@ -57,16 +79,16 @@ body {
     padding: 8px 10px 9px 35px;
     height: 35px;
     background-color: transparent;
-    border: 1px solid;
+    border-bottom: 2px solid #FFF;
     outline: none;
     font-size: 16px;
-    color: black;
+    color: #FFF;
     border-radius: 6px;
     padding: 15px 15px 15px 40px;
 }
 
 .input-box .input-field input::placeholder {
-    color: black; 
+    color: #FFF; 
     opacity: 0.3;
 }
 .input-box .input-field i {
@@ -75,7 +97,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
-    color: black;
+    color: #FFF;
 }
 
 .wrapper .btn {
@@ -118,9 +140,9 @@ body {
     text-align: center;
 }
 .social-icons img {
-    width: 50px;
-    height: 50px;
-    margin: 0 7px;
+    width: 40px;
+    height: 40px;
+    margin: 6px 7px;
     cursor: pointer;
     border-radius: 50%;
 }

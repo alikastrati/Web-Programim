@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
 
   
@@ -24,6 +25,11 @@
         <nav>
           <div class="navLogo">
              <p><a href="#">fl<span>oat</a></span></p>
+             <div class="search-field">
+              <input type="text" name="search-bar" id="searchBar" placeholder="Search">
+              <button id="searchButton">&#x1F50E;</button>
+             </div>
+            
           </div>
           
 
@@ -34,8 +40,9 @@
                  <a href="/src/index.html" class="active">Home</a>
                  <a href="#">Movies</a>
                  <a href="#">TV Shows</a>
-                 <a href="/Web Projekt.1/LoginForm.html">Log In</a>
-                 <a href="/Web Projekt.1/RegistationForm.html">Register</a>
+                 <a href="/register-login/LoginForm.html">Log In</a>
+                 <a href="/register-login/RegistationForm.html">Register</a>
+                 
                  
          
           </div>
@@ -50,7 +57,7 @@
         </nav>
 
       </div>
-       
+    
 
    
       
@@ -106,7 +113,7 @@
           <div class="slide">
             <img src="https://www.hollywoodreporter.com/wp-content/uploads/2022/12/Cillian-Murphy-Oppenheimer-Still-Publicity-H-2022.jpg?w=1296" alt="">
             <div class="info">
-              <h2>Openheimer</h2>
+              <h2>Oppenheimer</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est itaque similique atque ipsum sint.</p>
               <div class="buttons">
                 <button>Watch Trailer</button>
@@ -131,63 +138,21 @@
           </div>
 
           <div class="navigation">
-            <div class="btn active"></div>
-            <div class="btn"></div>
-            <div class="btn"></div>
-            <div class="btn"></div>
-            <div class="btn"></div>
-
+            <div class="btn" id="prevBtn"><</div>
+            <div class="btn" id="nextBtn">></div>
           </div>
   
   
   
         </div>
       </div>
+       <!-- MAIN HEADER (MOVIES , TRENDING SECTION) -->
 
-
-
-
-
-
-
-
-
-
-      
-
-
-      <!-- TRENDING IMDB  -->
-      <h2 id="trending" style="margin-top: 70px; margin-left: 20px;">Trending</h2>
-      <div class="side-section">
-        
-        
-        <div class="side-image">
-            <a href=""><img src="imgs/movies/71KPOvu-hOL._AC_UF894,1000_QL80_.jpg" alt="Image 1" class="trnd-anchors"></a>
-            <div class="image-description"><h2>Joker (2020)</h2></div>
-        </div>
-
-        <div class="side-image">
-            <a href=""><img src="imgs/movies/4-4113_star_wars_movie_poster_rey_ma.jpg" alt="Image 2" class="trnd-anchors"></a>
-            <div class="image-description"><h2>Star Wars (2020)</h2></div>
-        </div>
-        
-
-        <div class="side-image">
-          <a href=""><img src="imgs/movies/Oppenheimer-movie.jpg" alt="Image 2" class="trnd-anchors"></a>
-          <div class="image-description"><h2>Oppenheimer (2023)</h2></div>
-        </div>
-
-
-        <div class="side-image">
-        <a href=""><img src="imgs/movies/KillersFlowerMoon_Poster_2023.jpg" alt="Image 2" class="trnd-anchors"></a>
-        <div class="image-description"><h2>Killers of the Flower Moon (2023)</h2></div>
-        </div>
-      <!-- TRENDING end -->
     </div>
 
 
 
-</div>
+
 
 
 
@@ -198,7 +163,6 @@
   <!-- TOP 100 SECTION START -->
   
     <div class="top100">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#171a23" fill-opacity="1" d="M0,256L30,213.3C60,171,120,85,180,64C240,43,300,85,360,85.3C420,85,480,43,540,21.3C600,0,660,0,720,32C780,64,840,128,900,144C960,160,1020,128,1080,144C1140,160,1200,224,1260,250.7C1320,277,1380,267,1410,261.3L1440,256L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
       <p id="paragraph">Top 100 IMDb</p>
       <div class="container">
         <div class="top100-img">
@@ -249,6 +213,94 @@
 
 
    
+    <!-- REVIEWS SECTION START -->
+
+    <div class="reviews">
+      
+
+      <div class="container">
+        <!-- NAV BAR START -->
+        <div class="reviewNavContainer">
+          <div class="nav-review">
+            <a href="">New Reviews</a>
+            <a href="">Top Reviews</a>
+          </div>
+        </div>
+
+     
+        <!-- NAV BAR END -->
+        <div class="reviewBoxContainer">
+          <div class="reviewBox">
+            <div class="account-nav">
+              <img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">
+              <p style="display: inline;">Account Name</p>
+            </div>
+  
+            <div class="review-bottom">
+              <p>Lorem ipsum dolor sit.</p>
+              <button><i class="fa fa-thumbs-up"></i></button>
+              <button><i class="fa fa-thumbs-down"></i></button>
+            </div>
+          </div>
+  
+  
+  
+          <div class="reviewBox">
+            <div class="account-nav">
+              <img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">
+              <p style="display: inline;">Account Name</p>
+            </div>
+  
+            <div class="review-bottom">
+              <p id="reviewText">Lorem ipsum dolor sit.</p>
+              <button><i class="fa fa-thumbs-up"></i></button>
+              <button><i class="fa fa-thumbs-down"></i></button>
+            </div>
+          </div>
+
+
+
+
+          <div class="reviewBox">
+            <div class="account-nav">
+              <img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">
+              <p style="display: inline;">Account Name</p>
+            </div>
+  
+            <div class="review-bottom">
+              <p id="reviewText">Lorem ipsum dolor sit.</p>
+              <button><i class="fa fa-thumbs-up"></i></button>
+              <button><i class="fa fa-thumbs-down"></i></button>
+            </div>
+          </div>
+
+
+
+
+          <div class="reviewBox">
+            <div class="account-nav">
+              <img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">
+              <p style="display: inline;">Account Name</p>
+            </div>
+  
+            <div class="review-bottom">
+              <p id="reviewText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, nostrum!</p>
+              <button><i class="fa fa-thumbs-up"></i></button>
+              <button><i class="fa fa-thumbs-down"></i></button>
+            </div>
+          </div>
+  
+        </div>
+        
+      </div>
+    </div>
+
+
+
+
+
+
+
 
 
 
@@ -260,18 +312,18 @@
     
     <div class="columnLists">
       
-      <div class="titles" style="display: flex; justify-content: space-around;">
+      <div class="titles" style="margin-top: 140px; display: flex; justify-content: space-around;">
         <h2>TV Shows</h2>
         <h2>Featured Today</h2>
         <h2 >Highest Rated</h2>
         <h2>Finished Airing</h2>
       </div>
       <div class="container">
-        <!-- IMG-CONTAINER START-->
+        
         
         <div class="tv-show-week">
 
-          
+          <!-- IMG-CONTAINER START-->  
           <div class="column-img-container">
             <img src="imgs/movies/spiderman-709x1024.webp" alt="SS">
             <div class="info-column">
@@ -300,7 +352,7 @@
           </div>
 
         </div>
-<!-- IMG-CONTAINER END-->
+        <!-- IMG-CONTAINER END-->
 
         <!-- IMG-CONTAINER START-->
         <div class="featured-today">
@@ -332,10 +384,10 @@
               <a class="trailer" href="#">Watch Trailer</a>
             </div>
           </div>
-          <!-- IMG-CONTAINER END-->
+          
 
         </div>
-
+        <!-- IMG-CONTAINER END-->
 
         <!-- IMG-CONTAINER START-->
         <div class="highest-rated">
@@ -366,10 +418,10 @@
               <a class="trailer" href="#">Watch Trailer</a>
             </div>
           </div>
-          <!-- IMG-CONTAINER END-->
+
 
         </div>
-
+        <!-- IMG-CONTAINER END-->
 
         <div class="finished-airing">
 
@@ -402,7 +454,7 @@
           </div>
 
         </div>
-<!-- IMG-CONTAINER END-->
+      <!-- IMG-CONTAINER END-->
 
 
 
@@ -428,92 +480,55 @@
       </div>
     </div>
 
- <!-- NAVBAR OPACITY -->
-<!-- <script>
-  const navbar = document.getElementById('navbar');
 
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-
-    navbar.style.opacity = scrollY > 50 ? 0.8 : 1;
-  });
-
-
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
-</script> -->
 
   <!-- IMAGE SLIDER  -->
   <script type="text/javascript">
-
-    
-    
-    
     var slides = document.querySelectorAll('.slide');
-    var btns = document.querySelectorAll('.btn');
-    let currentSlide = 1;
+    var nextBtn = document.getElementById('nextBtn');
+    var prevBtn = document.getElementById('prevBtn');
+    let currentSlide = 0;
 
-    // ajdkas 
-
-
-    var manualNav = function(manual) {
+    function showSlide(n) {
       slides.forEach((slide) => {
         slide.classList.remove('active');
-
-        btns.forEach((btn) => {
-          btn.classList.remove('active');
-        });
-    });
-      
-      slides[manual].classList.add('active');
-      btns[manual].classList.add('active');
-    }
-
-    btns.forEach((btn,i) => {
-      btn.addEventListener("click", () => {
-        manualNav(i);
-        currentSlide = i;
       });
-    });
 
+      currentSlide += n;
 
-
-    // ACTIVE 
-
-    var repeat = function(activeClass) {
-      let active = document.getElementsbyClassName('active');
-      let i = 1;
-
-      var repeater = () => {
-        setTimeout(function() {
-          
-          slides[i].classList.add('active');
-          btns[i].classList.add('active');
-          i++;
-
-          if(slides.length == i) {
-            i = 0;
-          }
-          if(i >= slides.length) {
-            return;
-          }
-          repeater();
-        }, 1000);
+      if (currentSlide >= slides.length) {
+        currentSlide = 0;
+      }   
+      else if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
       }
 
-      repeater();
+      slides[currentSlide].classList.add('active');
     }
 
-    repeat();
+    function nextSlide() {
+      showSlide(1);
+    }
 
+    function prevSlide() {
+      showSlide(-1);
+    }
 
+  // Start the automatic sliding
+    var repeatInterval = setInterval(nextSlide, 3000);
+
+  // Add event listeners to buttons
+    nextBtn.addEventListener('click', () => {
+      clearInterval(repeatInterval); 
+      nextSlide();
+      repeatInterval = setInterval(nextSlide, 3000); 
+    });
+
+    prevBtn.addEventListener('click', () => {
+      clearInterval(repeatInterval); 
+      prevSlide();
+      repeatInterval = setInterval(nextSlide, 3000);
+    });
 
   </script>
 

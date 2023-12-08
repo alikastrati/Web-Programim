@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css?family=Jolly+Lodger&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
+:root {
+  --primary: #111111;
+  --secondary: #171A23;
+  --actionColors: #A98F76;
+
+
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Kanit';
+    box-sizing: border-box;
+    /* FIREFOX */
+    scrollbar-width: none;
+    scrollbar-color: #171A23;
+}
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--primary);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #FFF;
+    border-radius: 13px;
+    /* border: 1px solid #ffffff; */
+  }
+
+
+body {
+  background-color: var(--primary);
+  /* margin: 0 40px; */
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--secondary);
+    height: 60px;
+    user-select: none;
+    width: 100%;
+    position: fixed;
+    background: linear-gradient(to bottom, rgba(34, 34, 34, 0.8) 40%, rgba(34, 34, 34, 0) 100%);
+    z-index: 5;
+    /* opacity: 0.3; */
+    
+    
+    
+}
+
+nav input {
+  padding: 5px;
+  width: 240px;
+  border-radius: 10px;
+  margin-top: 13px;
+  margin-left: 30px;
+}
+
+nav .navLogo .search-field button {
+  padding: 3px;
+  background-color: transparent;
+  width: 3rem;
+  border: none;
+  border-radius: 4px;
+
+}
+
+.navLogo{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 5px;
+    background-color: inherit;}
+
+.navLogo p,span{
+    background-color: inherit;
+    display: flex;
+    font-size: 40px;
+    font-family: 'Jolly Lodger';
+
+}
+.navLogo a{
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+    background-color: inherit;
+    color: #ffff;
+    text-decoration: none;}
+
+
+
+.navLogo span{color: var(--actionColors);}
+
+
+.lists {
+    display: flex;
+    align-items: center;
+    background-color: inherit;
+    transition: height 0.4 ease-in-out;
+    }
+
+
+    
+
+.lists a{
+    text-decoration: none;
+    margin: 30px 20px;
+    color: #ffffff;
+    background-color: inherit;
+    font-weight: bold;
+    transition: .4s ease-in-out;
+}
+
+.hamburger {
+    display: none;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+/* Responsitivity per Hamburger Menu (Smaller Devices) */
+
+@media screen and (max-width: 768px){
+    .hamburger {
+        display: flex;
+        cursor: pointer;
+        background-color: inherit;
+        transition: 0.3s ease-in-out;
+        user-select: none;
+        
+    }
+
+    .hamburger #closeHam {
+        display: none;
+    }
+
+    .lists {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        height: 0;
+        top: 52px;
+        background-color: var(--secondary);
+        width: 100%;
+        height: calc(80vh - 50px);
+        padding-top: 20px;
+        gap: 2vh;
+        z-index: 3;
+        animation: slowChange 1s column ;
+        border-bottom: 0.4px solid #FFF;
+        
+        
+    }
+
+    .lists a{
+        color: #fff;
+        font-size: 3vh;
+    }
+
+
+}
+
+
+
+
+
+.mainContainer{display: flex;}
+.leftSection{
+    background-color: var(--primary);
+    width: 900px;
+    height: auto;
+
+
+}
+.leftSection .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.leftSection .container .genres{
+    width: 60%;
+    margin: 110px auto 20px;
+    color: #FFF;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);
+    -webkit-box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);
+    -moz-box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);
+    
+
+}
+
+.leftSection .container .genres .genre-list .listUnordered{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-top: 10px;
+    color: #FFF;
+}
+
+
+.leftSection .container .genres .genre-list .listUnordered a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+
+.leftSection .container .genres .genre-list .listUnordered a:hover{
+    border-bottom: solid 0.4px #FFF;
+}
+
+
+.leftSection .container .filters{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 250px;
+    margin: 30px auto;
+    color: #FFF;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);
+    -webkit-box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);
+    -moz-box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);
+    
+}
+
+
+.leftSection .container .release-dates {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 60px auto;
+    color: #FFF;
+}
+
+
+.leftSection .container .release-dates .dates input {
+    width: 100%;
+}
+
+
+
+.mainContainer .movies-list .container .images-row {
+    margin: 120px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    
+}
+
+.mainContainer .movies-list .container .images-row .img{
+    color: #FFF;
+    height: 50vh;
+    border-radius: 20px;
+
+}
+
+.mainContainer .movies-list .container .images-row .img >p{
+    text-align: center;
+    margin-top: -5px;
+    background-color: #A98F76;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    
+}
+
+.mainContainer .movies-list .container .images-row img {
+    height: 45vh;
+    width: 30vh;
+    border-radius: 20px;
+    box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);
+    -webkit-box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);
+    -moz-box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);
+}

@@ -7,48 +7,87 @@
     
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="login.css">
+
+
+    
+    <!-- FONTSs -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jolly-Lodger">
 </head>
 <body>
 
     
         
-    </div>
+    <a href="/src/index.html" style="margin-top: -610px;margin-right: -30px; text-decoration: none; color: #FFF;"><b>< Home</b></a>
     <div class="wrapper">
         <form action="">
-            <h1 style="margin-bottom: -5px;">
-                <span style="color: #FFF; margin-left: -470px;font-size: 30px;">Log</span>
-              <span style="color: #A98F76; font-size: 30px;">In</span>
-            </h1>
 
+            <div class="page-buttons">
+                <button type="submit"><a href="/register-login/LoginForm.html">LOG IN</a></button>
+                <button type="submit" id="registerButton"><a href="/register-login/RegistationForm.html">REGISTER</a></button>
+            </div>
 
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="text" placeholder="Name" required>
-                    <i class='bx bxs-user'></i>
+            <div class="container">
+                <div class="left-section">
+                    <div class="log-in">
+                        <h1 id="header-login" style="margin-bottom: -5px;">
+                            <span style="color: #FFF;font-size: 30px;">LOG</span>
+                          <span style="color: #A98F76; margin-left:-10px ; font-size: 30px;">IN</span>
+                        </h1>
+                    </div>
+                    
+        
+        
+                    <div class="input-section">
+                        <div class="input-box">
+                            <div class="input-field">
+                                <input type="text" placeholder="Email" required>
+                                <i class='bx bxs-user'></i>
+                            </div>
+                           
+                              
+                        </div>
+            
+                        <div class="input-box">
+                            
+                            <div class="input-field">
+                                <input type="password" placeholder="Password" required>
+                                <i class='bx bxs-lock-alt' ></i>
+                            </div> 
+                            
+                            <div>
+                            <div class="submit-section">
+                                <input type="checkbox"><span style="color: #FFF; margin-left: 15px;">I agree to the terms and conditions</span>
+                                <div class="button">
+                                    <button type="submit" class="btn"><a href="/src/index.html" style="text-decoration: none; color: #FFF;">Submit</a></button>
+                                </div>
+                            </div>
+                              
+                            </div>
+                        </div>
+        
+        
+                        
+                    </div>
+                    
                 </div>
-               
-                  
-            </div>
 
-            <div class="input-box">
                 
-                <div class="input-field">
-                    <input type="password" placeholder="Password" required>
-                    <i class='bx bxs-lock-alt' ></i>
-                </div> 
-                
-                <div>
-                <input type="checkbox"><span style="color: #FFF; margin-left: 15px;">I agree to the terms and conditions</span>  
+                <div class="right-section">
+                    <div class="social-icons">
+                        <h2>Get Connected With</h2>
+                        <a href="https://mail.google.com/" target="_blank"><img src="/register-login/imgs-loginform/gmail.png" alt="gmail"></a>
+                        <a href="https://www.facebook.com/" target="_blank"><img src="/register-login/imgs-loginform/fb.png" alt="facebook"></a>
+                        <a href="https://twitter.com/" target="_blank"></a>
+                        <img src="/register-login/imgs-loginform/x.png" alt="x">
+                    </div>
                 </div>
             </div>
+           
 
-            <button type="submit" class="btn"><a href="/src/index.html" style="text-decoration: none; color: #FFF;">Submit</a></button>
-            <div class="social-icons">
-                <a href="https://mail.google.com/" target="_blank"><img src="gmail.png" alt="gmail"></a>
-                <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" alt="facebook"></a>
-                <a href="https://twitter.com/" target="_blank"></a>
-                <img src="x.png" alt="x">
-            </div>
+           
+           
         </form>
     </div>
 </body>

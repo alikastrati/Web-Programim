@@ -22,6 +22,7 @@ body {
     background-size: cover;
     background-position: center;
     background-color: #111111 ;
+    background-image: url(/src/imgs/nav/pic2.jpg);
     
 }
 
@@ -36,8 +37,8 @@ h1 > span {
 
 
 .wrapper {
-    width: 650px;
-    height: 750px;
+    width: 950px;
+    height: 650px;
     background-color: var(--primary);    
     border-radius: 10px;
     color: black;
@@ -46,9 +47,74 @@ h1 > span {
     margin-left: -30px;
     box-sizing: border-box;
     position: relative;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* border: 3px solid #A98F76; */
+    box-shadow: -2px -1px 49px 27px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -2px -1px 49px 27px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px -1px 49px 27px rgba(0,0,0,0.75);
     
+}
+
+.wrapper .title {
+    width: 570px;
+}
+
+
+.wrapper .page-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.wrapper .page-buttons #registerButton {background-color: #817e7b;}
+
+.wrapper .page-buttons #registerButton a {
+    font-weight: bold ;
+    color: #FFF;
+}
+
+.wrapper .page-buttons button {
+    background-color: #A98F76;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+}
+
+
+.wrapper .page-buttons a{
+    text-decoration: none;
+    color: #111111;
+    font-weight: 550;
+}
+
+.wrapper .container {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+}
+
+.wrapper .left-section {
+    margin-top: 40px;
+}
+
+.wrapper .right-section {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.wrapper .right-section h2 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 35px;
+}
+
+
+.wrapper .left-section .input-box .name-surname,
+.wrapper .left-section .input-box .emails,
+.wrapper .left-section .input-box .password-cnfPassowrd{
+    display: flex;
+    width: 100%;   
 }
 
 .wrapper h1 {
@@ -63,6 +129,7 @@ h1 > span {
     justify-content: space-between;
     flex-wrap: wrap;
     background-color: var(--primary);
+    width: 600px;
 
 }
 .input-box .input-field {
@@ -74,7 +141,7 @@ h1 > span {
     margin: 13px 0;
 }
 .input-box .input-field input {
-    width: 100%;
+    width: 80%;
     padding: 8px 10px 9px 35px;
     height: 35px;
     background-color: transparent;
@@ -99,9 +166,12 @@ h1 > span {
     color: #FFF;
 }
 
+
+.wrapper .container .left-section .input-box .submit-section {margin-top: 20px;}
+
 .wrapper .btn {
-    width: 100%;
-    height: 40px;
+    width: 50%;
+    height: 60px;
     margin-top: 40px;
     background-color: #A98F76;;
     border: none;
@@ -144,4 +214,9 @@ h1 > span {
     margin: 0 7px;
     cursor: pointer;
     border-radius: 50%;
+}
+
+
+.error-box {
+    color: #c90000;
 }

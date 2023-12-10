@@ -21,7 +21,7 @@ body {
     min-height: 100vh;
     background-size: cover;
     background-position: center;
-    background-color: #111111 ;
+    background-image: url(/src/imgs/nav/pic2.jpg);
     
 }
 
@@ -35,10 +35,13 @@ h1 > span {
 }
 
 
+
+
+
 .wrapper {
-    width: 650px;
-    height: 750px;
-    background-color: var(--primary);    
+    width: 950px;
+    height: 550px;
+    background-color: var(--primary);  
     border-radius: 10px;
     color: black;
     padding: 40px 35px 18px;
@@ -46,16 +49,77 @@ h1 > span {
     margin-left: -30px;
     box-sizing: border-box;
     position: relative;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* border: 3px solid #A98F76; */
+    box-shadow: -2px -1px 49px 27px rgba(0,0,0,0.75);
+-webkit-box-shadow: -2px -1px 49px 27px rgba(0,0,0,0.75);
+-moz-box-shadow: -2px -1px 49px 27px rgba(0,0,0,0.75);
+
+    
     
 }
 
+
+.wrapper .page-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.wrapper .page-buttons #registerButton {background-color: #A98F76;}
+
+.wrapper .page-buttons #registerButton a {
+    font-weight: bold ;
+    color: #111111;}
+
+.wrapper .page-buttons button {
+    background-color: #666564;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+}
+
+
+.wrapper .page-buttons a{
+    text-decoration: none;
+    color: #FFF;
+    font-weight: 550;
+}
+
+.wrapper .container {
+    display: flex;
+    gap: 170px;
+}
+
+
+
 .wrapper h1 {
-   font-size: 36px;
-    text-align: center;
+    font-size: 46px;
+    font-weight:bolder;
+    text-align: left;
     margin-bottom: 20px;
     color: black;
+}
+.wrapper .input-section {
+    width: 450px;
+
+}
+
+.wrapper .input-section .input-box .submit-section {
+    display: flex;
+}
+
+.wrapper .input-section .input-box .submit-section .button {
+    width: 200px;
+    margin-top: -20px;
+}
+
+.wrapper .input-section .input-box .submit-section span {
+    margin-top: 20px;
+
+}
+
+.wrapper .log-in {
+    width: 400px;
 }
 
 .wrapper .input-box {
@@ -63,6 +127,7 @@ h1 > span {
     justify-content: space-between;
     flex-wrap: wrap;
     background-color: var(--primary);
+    gap: 40px;
     
 
 }
@@ -76,15 +141,15 @@ h1 > span {
 }
 .input-box .input-field input {
     width: 100%;
-    padding: 8px 10px 9px 35px;
+    padding: 25px;
     height: 35px;
     background-color: transparent;
-    border-bottom: 2px solid #FFF;
     outline: none;
     font-size: 16px;
     color: #FFF;
     border-radius: 6px;
-    padding: 15px 15px 15px 40px;
+    margin-top: 30px;
+    border: solid 1px #FFF;
 }
 
 .input-box .input-field input::placeholder {
@@ -93,33 +158,51 @@ h1 > span {
 }
 .input-box .input-field i {
     position: absolute;
-    left: 15px;
-    top: 50%;
+    left: 410px;
+    top: 68%;
     transform: translateY(-50%);
     font-size: 20px;
     color: #FFF;
 }
 
-.wrapper .btn {
+.wrapper .container .input-section .input-box .button button {
     width: 100%;
-    height: 40px;
     margin-top: 40px;
-    background-color: #A98F76;;
-    border: none;
-    outline: none;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    font-size: 16px;
-    color: white;
+    padding: 10px;
+    background-color: #A98F76;
     font-weight: 600;
+    border: none;
+    border-radius: 10px;
 }
+
+.wrapper input[type='checkbox'] {
+    margin-left: 10px;
+    
+}
+
 
 @media (max-width: 600px) {
     .input-box .input-field {
         width: 100%;
         margin: 10px 0;
     }
+}
+
+.wrapper .container .right-section {
+    display: flex;
+    align-items: center;
+}
+
+.wrapper .container .right-section a {
+    margin-left: 10px;
+}
+
+.wrapper .container .right-section h2 {
+    font-size: 25px;
+    color: #FFF;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 

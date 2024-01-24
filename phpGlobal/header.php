@@ -4,7 +4,7 @@ echo ' <!-- NAVBAR -->
 <div class="navBar" id="navbar">
   <nav>
     <div class="navLogo">
-       <p><a href="/src/index.html">fl<span>oat</a></span></p>
+       <p><a href="/Web-Programim/src/index.php">fl<span>oat</a></span></p>
        <div class="search-field">
         
        
@@ -25,11 +25,11 @@ echo ' <!-- NAVBAR -->
        <div class="lists" id="myTopNav">
            
            
-           <a href="/src/index.html" class="active">Home</a>
-           <a href="/src/movies-page/movies.html">Movies</a>
-           <a href="/src/tvshows-page/tvshows.html">TV Shows</a>
-           <a href="/register-login/LoginForm.html">Log In</a>
-           <a href="/register-login/RegistationForm.html">Register</a>
+           <a href="/Web-Programim/src/index.php" class="active">Home</a>
+           <a href="/Web-Programim/src/movies-page/movies-page.php">Movies</a>
+           <a href="/Web-Programim/src/tvshows-page/tvshows.php">TV Shows</a>
+           <a href="/Web-Programim/register-login/LoginForm.php">Log In</a>
+           <a href="/Web-Programim/register-login/RegistationForm.php">Register</a>
            
            
    

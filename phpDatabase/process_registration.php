@@ -20,7 +20,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // REGISTER USER 
     if($user->registerUser($name, $username, $email, $password)) {
+        $userID = $user->getUserId();
+        setcookie("user_id", $userID, time() + 3600, "/");
+        header("Location: RegistrationForm.html");
+        exit();
+        
+        
         echo 'Registration Successful!';
+
     } else {
         echo 'Error : Registration Failed!';
     }

@@ -185,6 +185,7 @@
 
 
       
-        <script src="/src/searchbar.js"></script>
+         <!-- SEARCH BAR  -->
+    <script src="/Web-Programim/src/searchbar.js"></script>
 </body>
 </html>

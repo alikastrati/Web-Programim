@@ -12,12 +12,12 @@
 
     
         
-  <a href="/src/index.html" style="margin-top: -670px;margin-right: -30px; text-decoration: none; color: #FFF;"><b>< Home</b></a>
+  <a href="/Web-Programim/src/index.php" style="margin-top: -670px;margin-right: -30px; text-decoration: none; color: #FFF;"><b>< Home</b></a>
     <div class="wrapper">
         <form action="process_registration.php" method="post" id="registrationForm">
             <div class="page-buttons">
-                <button type="submit"><a href="/register-login/LoginForm.html">LOG IN</a></button>
-                <button type="submit" id="registerButton"><a href="/register-login/RegistationForm.html">REGISTER</a></button>
+                <button type="submit"><a href="/Web-Programim/register-login/LoginForm.php">LOG IN</a></button>
+                <button type="submit" id="registerButton"><a href="/Web-Programim/register-login/RegistationForm.php">REGISTER</a></button>
             </div>
             
             <div class="container">

@@ -21,5 +21,34 @@ class User {
 
         $stmt->close();
     }
+
+    public function getUserId() {
+        return $this->db->getDBConnection()->insert_id;
+    }
+
+
+
+
+    // USER AUTHENTICATION 
+    public function authenticateUser($email, $password) {
+        $sql = "SELECT id, password FROM user WHERE email = ?";
+        $stmt = $this->db->getDBConnection()->prepare($sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->store_result();
+
+        if ($stmt->num_rows > 0) {
+            $stmt->bind_result($userId, $hashedPassword);
+            $stmt->fetch();
+
+            if (password_verify($password, $hashedPassword)) {
+                // Password is correct
+                return $userId;
+            }
+        }
+
+        // Authentication failed
+        return false;
+    }
 }
 ?>

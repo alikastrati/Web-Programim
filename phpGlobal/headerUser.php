@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="headerUser-Styles.css">
+<link rel="stylesheet" href="/Web-Programim/phpGlobal/headerUser-Styles.css">
 <?php 
 echo '<div class="navBar" id="navbar">
 <nav>
@@ -34,6 +34,7 @@ echo '<div class="navBar" id="navbar">
             <div class="dropdown-menu" id="dropdownMenu">
                 <a href="#">WatchList</a>
                 <a href="#">Reviews</a>
+                <a href="/Web-Programim/phpDatabase/logout.php">Log out</a>
             </div>
               
          </div>

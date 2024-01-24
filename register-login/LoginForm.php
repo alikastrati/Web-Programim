@@ -19,13 +19,13 @@
 
 
 
-    <a href="/src/index.html" style="margin-top: -550px;margin-right: -60px; text-decoration: none; color: #FFF;"><p style="width: 80px;">< Home</p></a>
+    <a href="/Web-Programim/src/index.php" style="margin-top: -550px;margin-right: -60px; text-decoration: none; color: #FFF;"><p style="width: 80px;">< Home</p></a>
     <div class="wrapper">
-        <form action="#" method="#">
+        <form action="/Web-Programim/phpDatabase/process_login.php" method="post">
 
             <div class="page-buttons">
-                <button type="submit"><a href="/register-login/LoginForm.html">LOG IN</a></button>
-                <button type="submit" id="registerButton"><a href="/register-login/RegistationForm.html">REGISTER</a></button>
+                <button type="submit"><a href="/Web-Programim/register-login/LoginForm.php">LOG IN</a></button>
+                <button type="submit" id="registerButton"><a href="/Web-Programim/register-login/RegistationForm.php">REGISTER</a></button>
             </div>
 
             <div class="container">
@@ -39,36 +39,19 @@
                     
         
         
-                    <div class="input-section">
-                        <div class="input-box">
-                            <div class="input-field">
-                                <input type="text" placeholder="Email" required>
-                                <i class='bx bxs-user'></i>
-                            </div>
-                           
-                              
+                    <div class="input-field">
+                        <input type="text" name="email" placeholder="Email" required>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" placeholder="Password" required>
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
+                    <div class="submit-section">
+                        <input type="checkbox"><span style="color: #FFF; margin-left: 15px;">I agree to the terms and conditions</span>
+                        <div class="button">
+                            <button type="submit" class="btn" id="loginButton">Login</button>
                         </div>
-            
-                        <div class="input-box">
-                            
-                            <div class="input-field">
-                                <input type="password" placeholder="Password" required>
-                                <i class='bx bxs-lock-alt' ></i>
-                            </div> 
-                            
-                            <div>
-                            <div class="submit-section">
-                                <input type="checkbox"><span style="color: #FFF; margin-left: 15px;">I agree to the terms and conditions</span>
-                                <div class="button">
-                                    <button type="submit" class="btn"><a href="/src/index.html" style="text-decoration: none; color: #FFF;">Submit</a></button>
-                                </div>
-                            </div>
-                              
-                            </div>
-                        </div>
-        
-        
-                        
                     </div>
                     
                 </div>

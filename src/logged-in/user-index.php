@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
     <title>Home Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="user-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   
@@ -18,50 +18,7 @@
     
       
       <!-- NAVBAR -->
-      <div class="navBar" id="navbar">
-        <nav>
-          <div class="navLogo">
-             <p><a href="/src/index.html">fl<span>oat</a></span></p>
-             <div class="search-field">
-              
-             
-              <a href="#" id="toggleSearch">&#9740;</a>
-              <div class="search-bar-container" id="searchContainer">
-                <input type="text" name="search-bar" id="searchBar" placeholder="Search">
-                <button id="closeSearch">Close</button>
-              </div>
-             </div>
-            
-          </div>
-
-        
-
-          
-
-    
-             <div class="lists" id="myTopNav">
-                 
-                 
-                 <a href="/src/index.html" class="active">Home</a>
-                 <a href="/src/movies-page/movies.html">Movies</a>
-                 <a href="/src/tvshows-page/tvshows.html">TV Shows</a>
-                 <a href="/register-login/LoginForm.html">Log In</a>
-                 <a href="/register-login/RegistationForm.html">Register</a>
-                 
-                 
-         
-          </div>
-      
-        
-
-          <div class="hamburger">
-             <span id="openHam" style="color: #FFFF;">&#9776</span>
-             <span id="closeHam" style="color: #FFFF;">&#x2716;</span>
-         
-          </div>
-        </nav>
-
-      </div>
+      <?php include '/xampp/htdocs/Web-Programim/phpGlobal/headerUser.php';?>
     
  
    
@@ -76,7 +33,7 @@
         <div class="img-slider">
 
           <div class="slide active">
-            <img src="imgs/nav/kung-fu-panda-2-ep-dreamworks-animation.jpg" alt="movie1">
+            <img src="/src/imgs/nav/kung-fu-panda-2-ep-dreamworks-animation.jpg" alt="movie1">
             <div class="info">
               <h2>Kung Fu Panda</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est itaque similique atque ipsum sint.</p>
@@ -89,7 +46,7 @@
   
   
           <div class="slide">
-            <img src="imgs/nav/SV2_mpp0420.1010_RT_sb_v1-copy.jpg" alt="movie2">
+            <img src="/src/imgs/nav/SV2_mpp0420.1010_RT_sb_v1-copy.jpg" alt="movie2">
             <div class="info">
               <h2>Spiderman Accross The SpiderVerse</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est itaque similique atque ipsum sint.</p>
@@ -143,8 +100,8 @@
           </div>
 
           <div class="navigation">
-            <div class="btn" id="prevBtn"><</div>
-            <div class="btn" id="nextBtn">></div>
+            <div class="btn" id="prevBtn">&#8678;</div>
+            <div class="btn" id="nextBtn">&#8680;</div>
           </div>
   
   
@@ -171,45 +128,45 @@
       <p id="paragraph">Top 100 IMDb</p>
       <div class="container">
         <div class="top100-img">
-          <a href=""><img src="imgs/movies/Oppenheimer-movie.jpg" alt="Oppenheimer"></a>
+          <a href=""><img src="/src/imgs/movies/Oppenheimer-movie.jpg" alt="Oppenheimer"></a>
           <h2>Oppenheimer</h2>
         </div>
 
 
         <div class="top100-img">
-          <a href=""><img src="imgs/movies/black-panther-web.jpg" alt="Black Panther"></a>
+          <a href=""><img src="/src/imgs/movies/black-panther-web.jpg" alt="Black Panther"></a>
           <h2>Black Panther</h2>
         </div>
 
 
         <div class="top100-img">
-          <a href=""><img src="imgs/movies/KillersFlowerMoon_Poster_2023.jpg" alt="Killers of the Flowermoon"></a>
+          <a href=""><img src="/src/imgs/movies/KillersFlowerMoon_Poster_2023.jpg" alt="Killers of the Flowermoon"></a>
           <h2>Killers of the Flowermoon</h2>
         </div>
 
         <div class="top100-img">
-          <a href=""><img src="imgs/movies/Elemental-Fandango-Character-Poster.jpg" alt="Elemental"></a>
+          <a href=""><img src="/src/imgs/movies/Elemental-Fandango-Character-Poster.jpg" alt="Elemental"></a>
           <h2>Elemental</h2>
         </div>
 
 
         <div class="top100-img">
-          <a href="/src/movie-description/movie.html"><img src="imgs/movies/71KPOvu-hOL._AC_UF894,1000_QL80_.jpg" alt="The Joker"></a>
+          <a href="/src/movie-description/movie.html"><img src="/src/imgs/movies/71KPOvu-hOL._AC_UF894,1000_QL80_.jpg" alt="The Joker"></a>
           <h2>The Joker</h2>
         </div>
 
         <div class="top100-img">
-          <a href=""><img src="imgs/movies/everything_everywhere_all_at_once.avif" alt="Everything Everywhere all at Once"></a>
+          <a href=""><img src="/src/imgs/movies/everything_everywhere_all_at_once.avif" alt="Everything Everywhere all at Once"></a>
           <h2>Everything Everywhere all at Once</h2>
         </div>
 
         <div class="top100-img">
-          <a href=""><img src="imgs/movies/spiderman-709x1024.webp" alt="Accross the Spider-Verse"></a>
+          <a href=""><img src="/src/imgs/movies/spiderman-709x1024.webp" alt="Accross the Spider-Verse"></a>
           <h2>Accross the Spider-Verse</h2>
         </div>  
 
         <div class="top100-img">
-          <a href=""><img src="imgs/movies/batman.jpg" alt="The Batman"></a>
+          <a href=""><img src="/src/imgs/movies/batman.jpg" alt="The Batman"></a> 
           <h2>The Batman</h2>
         </div>
       </div>
@@ -469,6 +426,29 @@
 
 
 
+
+
+<!-- DISPLAY  ACCOUNT -->
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+    var dropdownBtn = document.querySelector('.dropdown-btn');
+    var dropdownMenu = document.querySelector('.dropdown-menu');
+
+    dropdownBtn.addEventListener('click', function() {
+        dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', function (event) {
+        if (!event.target.matches('.dropdown-btn')) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+</script>
+
+
+
+
   <!-- SEARCH BAR -->
   <script src="searchbar.js"></script>
 
@@ -509,6 +489,7 @@
       showSlide(-1);
     }
 
+
   // Start the automatic sliding
     var repeatInterval = setInterval(nextSlide, 3000);
 
@@ -537,6 +518,8 @@
 
 
     <!-- Hamburger Menu Script-->
+
+    <!-- MAKE THIS GLOBAL FOR THE REST OF THE PAGES -->
     <script>
         let openHam = document.querySelector('#openHam');
         let closeHam = document.querySelector('#closeHam');

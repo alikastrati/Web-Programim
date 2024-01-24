@@ -101,7 +101,7 @@ function validateForm() {
     var form = document.getElementById('registrationForm');
     var formData = new FormData(form);
 
-    xhr.open('POST', '/Web-Programim/phpDatabase/process_registration.php', true);
+    xhr.open('POST', 'process_registration.php', true);
     xhr.onload = function() {
       if(xhr.status == 200) {
         // RESPONSE FROM SERVER 

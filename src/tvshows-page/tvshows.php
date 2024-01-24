@@ -14,47 +14,8 @@
 </head>
 <body>
 
-    <div class="navBar" id="navbar">
-        <nav>
-          <div class="navLogo">
-            <p><a href="/src/index.html">fl<span>oat</a></span></p>
-             <div class="search-field">
-              
-             
-                <a href="#" id="toggleSearch">&#9740;</a>
-                <div class="search-bar-container" id="searchContainer">
-                  <input type="text" name="search-bar" id="searchBar" placeholder="Search">
-                  <button id="closeSearch">Close</button>
-                </div>
-               </div>
-            
-          </div>
-          
-
-    
-             <div class="lists" id="myTopNav">
-                 
-                 
-                 <a href="/src/index.html" class="active">Home</a>
-                 <a href="/src/movies-page/movies.html">Movies</a>
-                 <a href="/src/tvshows-page/tvshows.html">TV Shows</a>
-                 <a href="/register-login/LoginForm.html">Log In</a>
-                 <a href="/register-login/RegistationForm.html">Register</a>
-                 
-                 
-         
-          </div>
-      
-        
-
-          <div class="hamburger">
-             <span id="openHam" style="color: #FFFF;">&#9776</span>
-             <span id="closeHam" style="color: #FFFF;">&#x2716;</span>
-         
-          </div>
-        </nav>
-
-      </div>
+   <!-- HEADER PHP  -->
+   <?php include '/xampp/htdocs/Web-Programim/phpGlobal/header.php';?>
     
 
       
@@ -212,36 +173,8 @@
 
 
 
-         <!--Footer-->
-    <footer>
-        <div class="footerContainer">
-            <div class="social">
-                <a href="https://www.facebook.com"><i class='fa-brands fa-facebook'></i></a>
-                <a href="https://www.instagram.com"><i class='fa-brands fa-instagram'></i></a>
-                <a href="https://twitter.com"><i class='fa-brands fa-twitter'></i></a>
-            </div>
-            <div class="footerNav">
-            <ul>
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">News</a>
-                </li> 
-                <li>
-                    <a href="#">Contact Us</a>
-                </li>
-                <li>
-                    <a href="#">Privacy Policy</a>
-                </li>
-            </ul>
-            </div>
-        
-        </div>
-        <div class="footerBottom">
-            <p>&copy;2023 By Float</p>
-        </div>
-        </footer>
+         <!--FOOTER PHP-->
+         <?php include '/xampp/htdocs/Web-Programim/phpGlobal/footer.php';?>
 
 
 

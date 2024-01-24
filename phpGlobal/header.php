@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="headerStyles.css">
+<link rel="stylesheet" href="/Web-Programim/phpGlobal/headerStyles.css">
 <?php 
 echo ' <!-- NAVBAR -->
 <div class="navBar" id="navbar">

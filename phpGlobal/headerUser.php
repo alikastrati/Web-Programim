@@ -1,6 +1,9 @@
 
 <link rel="stylesheet" href="/Web-Programim/phpGlobal/headerUser-Styles.css">
 <?php 
+session_start();
+
+
 echo '<div class="navBar" id="navbar">
 <nav>
   <div class="navLogo">
@@ -30,7 +33,24 @@ echo '<div class="navBar" id="navbar">
          <a href="/src/tvshows-page/tvshows.html">TV Shows</a>
 
          <div class="dropdown">
-            <button class="dropdown-btn">Account Name &#9662;</button>
+            <button class="dropdown-btn">';
+            
+             // GET USERNAME FROM SESSION
+    if(isset($_SESSION['username'])) {
+
+      echo $_SESSION['username'];
+
+    } else {
+      echo 'Account';
+   }
+          
+          
+          
+          
+            
+            
+            
+            echo '&#9662;</button>
             <div class="dropdown-menu" id="dropdownMenu">
                 <a href="#">WatchList</a>
                 <a href="#">Reviews</a>

@@ -26,6 +26,7 @@
     <!-- MAIN HEADER (MOVIES , TRENDING SECTION) -->
     <div class="header-home">
     
+    
      
       
       

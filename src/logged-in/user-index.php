@@ -21,6 +21,7 @@
       <?php include '/xampp/htdocs/Web-Programim/phpGlobal/headerUser.php';?>
     
  
+      
    
       
     <!-- MAIN HEADER (MOVIES , TRENDING SECTION) -->

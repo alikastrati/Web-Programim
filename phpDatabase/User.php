@@ -52,6 +52,20 @@ class User {
     }
 
 
+    public function getUserName($email) {
+        $sql = "SELECT username FROM user WHERE email = ?";
+        $stmt = $this->db->getDBConnection()->prepare($sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->bind_result($username);
+
+        if($stmt->fetch()) {
+            return $username;
+        }
+        return false;
+    }
+
+
     public function getUserRole($email) {
         $sql = "SELECT role FROM user WHERE email = ?";
         $stmt = $this->db->getDBConnection()->prepare($sql);
@@ -64,5 +78,8 @@ class User {
         }
         return false;
     }
+
+
+   
 }
 ?>

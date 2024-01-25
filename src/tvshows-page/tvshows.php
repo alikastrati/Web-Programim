@@ -181,5 +181,9 @@
 
     <!-- SEARCH BAR  -->
     <script src="/Web-Programim/src/searchbar.js"></script>
+
+
+    <!-- HAMBURGER MENU  -->
+    <script src="/Web-Programim/src/hamburger-menu.js"></script>
 </body>
 </html>

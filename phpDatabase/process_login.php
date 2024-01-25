@@ -16,9 +16,28 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if($userId) {
         // Successful Authentication 
+        
         $_SESSION['user_id'] = $userId;
-        header("Location: /Web-Programim/src/logged-in/user-index.php");
+
+
+        $userRole = $user->getUserRole($email);
+        $_SESSION['user_role'] = $userRole;
+
+        
+        $username = $user->getUserName($email);
+        $_SESSION['username'] = $username;
+
+
+        if($userRole === 'admin') {
+            
+            header("Location: /Web-Programim/src/logged-in/admin.php");
+        }
+        else {
+            header("Location: /Web-Programim/src/logged-in/user-index.php");
+        }
+
         exit();
+
     } else {
         // Failed Authentication 
         echo 'Invalid Credentials.';

@@ -18,14 +18,14 @@
     
       
       <!-- NAVBAR -->
-      <?php include '/xampp/htdocs/Web-Programim/phpGlobal/headerUser.php';?>
+      <?php include '/xampp/htdocs/Web-Programim/phpGlobal/headerAdmin.php';?>
     
  
-      
    
       
     <!-- MAIN HEADER (MOVIES , TRENDING SECTION) -->
     <div class="header-home">
+    
     
      
       

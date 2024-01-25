@@ -403,6 +403,11 @@
 
 
   
+    <!-- Hamburger Menu Script-->
+    <script src="hamburger-menu.js"></script>
+
+
+  
 
   <!-- IMAGE SLIDER  -->
   <script type="text/javascript">
@@ -465,22 +470,6 @@
   
 
 
-    <!-- Hamburger Menu Script-->
-    <script>
-        let openHam = document.querySelector('#openHam');
-        let closeHam = document.querySelector('#closeHam');
-        let navigationItems = document.querySelector('#myTopNav');
-    
-        const hamburgerEvent = (navigation, close, open) => {
-            navigationItems.style.display = navigation;
-            closeHam.style.display = close;
-            openHam.style.display = open;
-            
-        };
-    
-        openHam.addEventListener('click', () => hamburgerEvent("flex", "block", "none"));
-        closeHam.addEventListener('click', () => hamburgerEvent("none", "none", "block"));
-    </script>
     
     
 

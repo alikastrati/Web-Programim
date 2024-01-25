@@ -50,5 +50,19 @@ class User {
         // Authentication failed
         return false;
     }
+
+
+    public function getUserRole($email) {
+        $sql = "SELECT role FROM user WHERE email = ?";
+        $stmt = $this->db->getDBConnection()->prepare($sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->bind_result($role);
+
+        if($stmt->fetch()) {
+            return $role;   
+        }
+        return false;
+    }
 }
 ?>

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --primary: #111111;
+    --secondary: #171A23;
+    --actionColors: #A98F76;  
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Times New Roman', Times, serif;
+}
+
+
+.mainContainer {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: #451952;
+}
+
+
+.mainContainer .right-panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #AE445A;
+}
+
+
+.mainContainer .left-panel {
+    display: flex;
+    flex-direction: column;
+    color: #FFF;
+    background-color: #451952;
+    font-size: 1.8rem;
+
+}
+
+.mainContainer .left-panel .profile-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 10px;
+
+}
+
+.mainContainer .left-panel .profile-info img {
+    height: 15vh;
+    width: 15vh;
+
+}
+
+.mainContainer .left-panel .dashboard-ui {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 35px;
+    
+}
+
+.mainContainer .left-panel .dashboard-ui a {
+    text-decoration: none;
+    color: #FFF;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.mainContainer .left-panel .dashboard-ui a:hover {
+    background-color: #5f5f5f;
+    
+}
+
+
+
+
+/* RIGHT PANEL  */
+
+
+label {
+    font-weight: 600;
+    color: #FFF;
+    font-size: 2rem;
+    display: flex;
+
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+form .registered-users , .active-users {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    height: 30vh;
+    background-color: #F39F5A;
+    border-radius: 10px;
+    font-size: 2.2rem;
+    color: #FFF;
+    font-weight: 600;
+}

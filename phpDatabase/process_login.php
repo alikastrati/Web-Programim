@@ -24,6 +24,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_role'] = $userRole;
 
         
+        
         $username = $user->getUserName($email);
         $_SESSION['username'] = $username;
 

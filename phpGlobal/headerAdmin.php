@@ -36,17 +36,17 @@ echo '<div class="navBar" id="navbar">
     if(isset($_SESSION['username'])) {
 
         echo $_SESSION['username'];
-
-    } else {
+  
+      } else {
         echo 'Account';
-    }
-            
+     }
+                
             
             
             
     echo '&#9662;</button>
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="#">Dashboard</a>
+                <a href="/Web-Programim/src/logged-in/admin-dashboard.html">Dashboard</a>
                 <a href="/Web-Programim/phpDatabase/logout.php">Log out</a>
             </div>
               

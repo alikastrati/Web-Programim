@@ -31,10 +31,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if($userRole === 'admin') {
             
-            header("Location: /Web-Programim/src/logged-in/admin.php");
+            header("Location:   /Web-Programim/src/logged-in/phpScripts/admin.php");
         }
         else {
-            header("Location: /Web-Programim/src/logged-in/user-index.php");
+            header("Location: /Web-Programim/src/logged-in/phpScripts/user-index.php");
         }
 
         exit();

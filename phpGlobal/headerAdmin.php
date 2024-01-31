@@ -46,7 +46,7 @@ echo '<div class="navBar" id="navbar">
             
     echo '&#9662;</button>
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="/Web-Programim/src/logged-in/admin-dashboard.html">Dashboard</a>
+                <a href="\Web-Programim\src\logged-in\adminPages\admin-dashboard.php">Dashboard</a>
                 <a href="/Web-Programim/phpDatabase/logout.php">Log out</a>
             </div>
               

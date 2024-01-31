@@ -1,3 +1,32 @@
+<?php 
+
+$trendingURL = 'https://api.themoviedb.org/3/trending/movie/week?api_key=9a23cb65445bdb0713ad45e54d8b7096';
+
+
+// GET API REQUEST (file_get_contents)
+$response = file_get_contents($trendingURL);
+
+
+// DECODE JSON 
+
+$data = json_decode($response, true);
+
+
+$trendingMovies = [];
+// OUTPUT 
+if(isset($data['results']) && !empty($data['results'])) {
+    $trendingMovies = $data['results'];
+}
+else {
+    echo 'Failed to retrieve data!';
+}
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,54 +152,20 @@
 
 
   <!-- TOP 100 SECTION START -->
-  
-    <div class="top100">
-      <p id="paragraph">Top 100 IMDb</p>
-      <div class="container">
-        <div class="top100-img">
-          <a href=""><img src="imgs/movies/Oppenheimer-movie.jpg" alt="Oppenheimer"></a>
-          <h2>Oppenheimer</h2>
-        </div>
 
 
-        <div class="top100-img">
-          <a href=""><img src="imgs/movies/black-panther-web.jpg" alt="Black Panther"></a>
-          <h2>Black Panther</h2>
-        </div>
-
-
-        <div class="top100-img">
-          <a href=""><img src="imgs/movies/KillersFlowerMoon_Poster_2023.jpg" alt="Killers of the Flowermoon"></a>
-          <h2>Killers of the Flowermoon</h2>
-        </div>
-
-        <div class="top100-img">
-          <a href=""><img src="imgs/movies/Elemental-Fandango-Character-Poster.jpg" alt="Elemental"></a>
-          <h2>Elemental</h2>
-        </div>
-
-
-        <div class="top100-img">
-          <a href="/src/movie-description/movie.html"><img src="imgs/movies/71KPOvu-hOL._AC_UF894,1000_QL80_.jpg" alt="The Joker"></a>
-          <h2>The Joker</h2>
-        </div>
-
-        <div class="top100-img">
-          <a href=""><img src="imgs/movies/everything_everywhere_all_at_once.avif" alt="Everything Everywhere all at Once"></a>
-          <h2>Everything Everywhere all at Once</h2>
-        </div>
-
-        <div class="top100-img">
-          <a href=""><img src="imgs/movies/spiderman-709x1024.webp" alt="Accross the Spider-Verse"></a>
-          <h2>Accross the Spider-Verse</h2>
-        </div>  
-
-        <div class="top100-img">
-          <a href=""><img src="imgs/movies/batman.jpg" alt="The Batman"></a>
-          <h2>The Batman</h2>
-        </div>
+  <div class="top100">
+  <p id="paragraph">Trending</p>
+  <div class="container">
+    <?php foreach ($trendingMovies as $movie) : ?>
+      <div class="top100-img">
+        <a href=""><img src="https://image.tmdb.org/t/p/w500<?= $movie['poster_path'] ?>" alt="<?= $movie['title'] ?>"></a>
+        <h2><?= $movie['title'] ?></h2>
       </div>
-    </div>
+    <?php endforeach; ?>
+  </div>
+</div>
+  
     <!-- TOP 100 SECTION END -->
 
 

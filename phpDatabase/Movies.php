@@ -8,14 +8,7 @@ class Movies {
 
 
     public function addMovie($movieId, $title, $imageUrl) {
-
-
-        if ($this->movieExists($movieId)) {
-            echo "Movie already exists: $title\n";
-            return true; 
-        }
-
-        $sql = "INSERT INTO movies (tmdb_id, title, image_url) VALUES (?,?,?)";
+        $sql = "INSERT INTO movies (tmdb_id, title, imageUrl) VALUES (?,?,?)";
         $stmt = $this->mov->getDBConnection()->prepare($sql);
         $stmt->bind_param("iss", $movieId, $title, $imageUrl);
 
@@ -51,19 +44,6 @@ class Movies {
         
         $this->mov->closeConnection();
     
-    }
-
-
-    private function movieExists($movieId) {
-        $sql = "SELECT COUNT(*) AS count FROM movies WHERE tmdb_id = ?";
-        $stmt = $this->mov->getDBConnection()->prepare($sql);
-        $stmt->bind_param("i", $movieId);
-        $stmt->execute();
-        
-        $result = $stmt->get_result();
-        $row = $result->fetch_assoc();
-        
-        return $row['count'] > 0;
     }
 }
 

@@ -5,7 +5,7 @@
 $apiKey = '9a23cb65445bdb0713ad45e54d8b7096';
 
 // Fetch a list of popular movies from TMDb API
-$apiUrl = "https://api.themoviedb.org/3/trending/movie/week?api_key=9a23cb65445bdb0713ad45e54d8b7096";
+$apiUrl = "https://api.themoviedb.org/3/movie/popular?api_key=9a23cb65445bdb0713ad45e54d8b7096";
 $response = file_get_contents($apiUrl);
 $movies = json_decode($response, true)['results'];
 
@@ -122,8 +122,8 @@ $movies = json_decode($response, true)['results'];
                   <div class="images-row">
                     <?php foreach($movies as $movie) : ?>
                       <div class="img" data-genre="<?= implode(', ', $movie['genre_ids']) ?>">
-                        <a href="/Web-Programim/src/movie-description/movie.php?type=movie&id=<?= $movie['id'] ?>">
-                            <img src="https://image.tmdb.org/t/p/w500<?= $movie['poster_path'] ?>" alt="<?= $movie['title'] ?>">
+                        <a href="/src/movie-description/movie.html">
+                          <img src="https://image.tmdb.org/t/p/w500<?= $movie['poster_path'] ?>" alt="<?= $movie['title'] ?>">
                         </a>
                         <p style="width:220px;"><?= $movie['title'] ?></p>
                         <div class="overlay">

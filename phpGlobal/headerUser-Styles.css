@@ -161,6 +161,44 @@ nav .search-field input {
 }
 
 
+
+
+
+.lists .dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    border-radius: 15px;
+    background-color: var(--primary);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.lists .dropdown .dropdown-menu a{
+    color: #FFF;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.lists .dropdown .dropdown-menu a:hover {
+    background-color: var(--secondary);
+}
+
+.lists .dropdown-btn {
+    background: none;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.lists .dropdown-btn:hover {
+    text-decoration: underline;
+}
+
+
+
 .hamburger {
     display: none;
     font-size: 20px;
@@ -171,51 +209,3 @@ nav .search-field input {
 
 
 
-
-
-
-
-
-/* Responsitivity per Hamburger Menu (Smaller Devices) */
-
-@media screen and (max-width: 768px){
-    .hamburger {
-        display: flex;
-        cursor: pointer;
-        background-color: inherit;
-        transition: 0.3s ease-in-out;
-        user-select: none;
-        
-    }
-
-    .hamburger #closeHam {
-        display: none;
-    }
-
-    .lists {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        right: 0;
-        height: 0;
-        top: 52px;
-        background-color: var(--secondary);
-        width: 100%;
-        height: calc(80vh - 50px);
-        padding-top: 20px;
-        gap: 2vh;
-        z-index: 3;
-        animation: slowChange 1s column ;
-        border-bottom: 0.4px solid #FFF;
-        
-        
-    }
-
-    .lists a{
-        color: #fff;
-        font-size: 3vh;
-    }
-
-
-}

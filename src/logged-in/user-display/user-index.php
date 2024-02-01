@@ -47,7 +47,7 @@ else {
     
       
     <!--HEADER PHP-->
-    <?php include '/xampp/htdocs/Web-Programim/phpGlobal/header.php';?>
+    <?php include '/xampp/htdocs/Web-Programim/phpGlobal/headerUser.php';?>
     
  
    
@@ -89,20 +89,21 @@ else {
 
 
   <!-- TOP 100 SECTION START -->
-<div class="top100">
+
+
+  <div class="top100">
   <p id="paragraph">Trending</p>
   <div class="container">
     <?php foreach ($trendingMovies as $movie) : ?>
       <div class="top100-img">
-        <a href="/Web-Programim/src/movie-description/movie.php?type=movie&id=<?= $movie['id'] ?>">
-          <img src="https://image.tmdb.org/t/p/w500<?= $movie['poster_path'] ?>" alt="<?= $movie['title'] ?>">
-        </a>
+        <a href=""><img src="https://image.tmdb.org/t/p/w500<?= $movie['poster_path'] ?>" alt="<?= $movie['title'] ?>"></a>
         <h2><?= $movie['title'] ?></h2>
       </div>
     <?php endforeach; ?>
   </div>
 </div>
-<!-- TOP 100 SECTION END -->
+  
+    <!-- TOP 100 SECTION END -->
 
 
    

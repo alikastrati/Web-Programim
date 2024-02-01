@@ -2,7 +2,7 @@
 
 $apiKey = '9a23cb65445bdb0713ad45e54d8b7096';
 
-$apiUrl = "https://api.themoviedb.org/3/trending/tv/week?api_key=9a23cb65445bdb0713ad45e54d8b7096";
+$apiUrl = "https://api.themoviedb.org/3/tv/popular?api_key={$apiKey}";
 $response = file_get_contents($apiUrl);
 $tvShows = json_decode($response, true)['results'];
 ?>
@@ -114,14 +114,9 @@ $tvShows = json_decode($response, true)['results'];
           <div class="movies-list">
             <div class="container">
                 <div class="images-row">
-
                 <?php foreach ($tvShows as $tvshow) : ?>
-                     
-                    <div class="img" data-genre-ids="<?= implode(',', $tvshow['genre_ids']) ?>">
-                    <a href="/Web-Programim/src/movie-description/movie.php?type=tv&id=<?= $tvshow['id'] ?>">
-                            <img src="https://image.tmdb.org/t/p/w500<?= $tvshow['poster_path'] ?>" alt="<?= $tvshow['name'] ?>">
-                        </a>
-                         
+                     <div class="img" data-genre-ids="<?= implode(',', $tvshow['genre_ids']) ?>">
+                         <img src="https://image.tmdb.org/t/p/w500<?= $tvshow['poster_path'] ?>" alt="<?= $tvshow['name'] ?>">
                          <p class="movie-title" style="width:220px;"><?= $tvshow['name'] ?></p>
                          <div class="overlay">
                              <button class="add-to-watchlist" title="Add to Watchlist">+</button>
@@ -148,12 +143,13 @@ $tvShows = json_decode($response, true)['results'];
 
 
       
-         <!-- SEARCH BAR  -->
-    <script src="/Web-Programim/src/searchbar.js"></script>
+  <!-- SEARCH BAR -->
+  <script src="/Web-Programim/jsGlobal/searchbar.js"></script>
 
 
-    <!-- HAMBURGER MENU  -->
-    <script src="/Web-Programim/src/hamburger-menu.js"></script>
+  
+    <!-- Hamburger Menu Script-->
+    <script src="/Web-Programim/jsGlobal/hamburger-menu.js"></script>
 
 
 
@@ -165,15 +161,16 @@ $tvShows = json_decode($response, true)['results'];
         // Get all TV show elements
         var tvShowElements = document.querySelectorAll('.img');
 
+        // Add click event listener to each genre link
         genreLinks.forEach(function (link) {
             link.addEventListener('click', function (event) {
                 // Prevent default link behavior
                 event.preventDefault();
 
-                
+                // Get the selected genre
                 var selectedGenre = link.getAttribute('data-genre');
 
-                // show/hide TV shows based on the selected genre
+                // Show/hide TV shows based on the selected genre
                 tvShowElements.forEach(function (tvShow) {
                     var tvShowGenres = tvShow.getAttribute('data-genre-ids');
                     if (tvShowGenres.includes(selectedGenre)) {

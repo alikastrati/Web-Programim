@@ -61,78 +61,15 @@ else {
       <div class="imgContainer">
         <div class="img-slider">
 
-          <div class="slide active">
-            <img src="imgs/nav/kung-fu-panda-2-ep-dreamworks-animation.jpg" alt="movie1">
-            <div class="info">
-              <h2>Kung Fu Panda</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est itaque similique atque ipsum sint.</p>
-              <div class="buttons">
-                <button><a href="https://www.youtube.com/watch?v=NRc-ze7Wrxw">Watch Trailer</a></button>
-                <button id="watchBtn">Add to Watch List</button>
-              </div>
-            </div>
-          </div>
-  
-  
-          <div class="slide">
-            <img src="imgs/nav/SV2_mpp0420.1010_RT_sb_v1-copy.jpg" alt="movie2">
-            <div class="info">
-              <h2>Spiderman Accross The SpiderVerse</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est itaque similique atque ipsum sint.</p>
-              <div class="buttons">
-                <button><a href="https://www.youtube.com/watch?v=cqGjhVJWtEg&pp=ygUqc3BpZGVyIG1hbiBhY3Jvc3MgdGhlIHNwaWRlciB2ZXJzZSB0cmFpbGVy">Watch Trailer</a></button>
-                <button id="watchBtn">Add to Watch List</button>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="slide">
-            <img src="https://res.cloudinary.com/ybmedia/image/upload/c_crop,h_748,w_1332,x_3,y_132/c_fill,f_auto,h_900,q_auto,w_1600/v1/m/b/d/bdc65a884c00ef4c925cadba059e7bc08a30b39c/20-facts-might-know-guardians-galaxy.jpg" alt="">
-            <div class="info">
-              <h2>Guardians of The Galaxy</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est itaque similique atque ipsum sint.</p>
-              <div class="buttons">
-                <button><a href="https://www.youtube.com/watch?v=u3V5KDHRQvk&pp=ygUhZ3VhcmRpYW5zIG9mIHRoZSBnYWxheHkgMyB0cmFpbGVy">Watch Trailer</a></button>
-                <button id="watchBtn">Add to Watch List</button>
-              </div>
-
-            </div>
-          </div>
-
-
-          <div class="slide">
-            <img src="https://www.hollywoodreporter.com/wp-content/uploads/2022/12/Cillian-Murphy-Oppenheimer-Still-Publicity-H-2022.jpg?w=1296" alt="movie3">
-            <div class="info">
-              <h2>Oppenheimer</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est itaque similique atque ipsum sint.</p>
-              <div class="buttons">
-                <button><a href="https://www.youtube.com/watch?v=uYPbbksJxIg&pp=ygUTb3BwZW5oZWltZXIgdHJhaWxlcg%3D%3D">Watch Trailer</a></button>
-                <button id="watchBtn">Add to Watch List</button>
-              </div>
-
-            </div>
-          </div>
-
-
-          <div class="slide">
-            <img src="https://cdn.mos.cms.futurecdn.net/v7d9BmddPkF6QBqLdkuhK7.jpg" alt="movie4">
-            <div class="info">
-              <h2>Asteroid City</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est itaque similique atque ipsum sint.</p>
-              <div class="buttons">
-                <button><a href="https://www.youtube.com/watch?v=9FXCSXuGTF4&pp=ygUQYXN0ZXJvaWQgdHJhaWxlcg%3D%3D">Watch Trailer</a></button>
-                <button id="watchBtn">Add to Watch List</button>
-              </div>
-
-            </div>
-          </div>
-
+        
+        <?php include 'api-call.php';?>
+         
           <div class="navigation">
             <div class="btn" id="prevBtn"><</div>
             <div class="btn" id="nextBtn">></div>
           </div>
-  
+
+        
   
   
         </div>
@@ -439,7 +376,7 @@ else {
     }
 
   // Start the automatic sliding
-    var repeatInterval = setInterval(nextSlide, 3000);
+    var repeatInterval = setInterval(nextSlide, 8000);
 
   // Add event listeners to buttons
     nextBtn.addEventListener('click', () => {

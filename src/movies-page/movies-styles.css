@@ -46,14 +46,16 @@ body {
 .mainContainer{display: flex;}
 .leftSection{
     background-color: var(--primary);
-    width: 900px;
-    height: auto;
+    width: 250px;
+    height: 100%;
 
 
 }
 .leftSection .container {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
+
 }
 
 .leftSection .container .genres{
@@ -82,6 +84,7 @@ body {
 .leftSection .container .genres .genre-list .listUnordered a{
     text-decoration: none;
     color: #FFF;
+    cursor: pointer;
 }
 
 
@@ -95,7 +98,8 @@ body {
     flex-direction: column;
     gap: 15px;
     width: 250px;
-    margin: 30px auto;
+    margin-top: 30px;
+    margin-left: 40px;
     color: #FFF;
     border-radius: 30px;
     padding: 20px;
@@ -120,6 +124,10 @@ body {
 
 
 
+.mainContainer .movies-list {
+    margin-left: 100px;
+}
+
 .mainContainer .movies-list .container .images-row {
     margin: 120px auto;
     display: flex;
@@ -128,31 +136,97 @@ body {
     
 }
 
-.mainContainer .movies-list .container .images-row .img{
+.mainContainer .movies-list .container .images-row .img {
+    position: relative;
     color: #FFF;
     height: 50vh;
     letter-spacing: 0.8px;
     border-radius: 20px;
-
+    transition: background-color 0.3s;
 }
 
-.mainContainer .movies-list .container .images-row .img >p{
+.mainContainer .movies-list .container .images-row .img > p {
     text-align: center;
     margin-top: -5px;
     background-color: #574a3f;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
-    
 }
 
-.mainContainer .movies-list .container .images-row img {
+
+.mainContainer .movies-list .container .images-row .img img {
     height: 45vh;
     width: 30vh;
     border-radius: 20px;
     box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);
     -webkit-box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);
     -moz-box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);
+    transition: filter 0.3s;
+    position: relative; 
+    z-index: 0; 
+}    
+
+.mainContainer .movies-list .container .images-row .img:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
+
+.mainContainer .movies-list .container .images-row .img .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+    bottom: 30px;
+}
+
+.mainContainer .movies-list .container .images-row .img:hover .overlay {
+    opacity: 1;
+}
+
+.mainContainer .movies-list .container .images-row .img .overlay .add-to-watchlist {
+    font-size: 2em;
+    color: #111;
+    background-color: #FFF;
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    transition: opacity 0.3s;
+}
+
+.mainContainer .movies-list .container .images-row .img:hover .overlay .add-to-watchlist {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

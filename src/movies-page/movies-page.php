@@ -1,3 +1,18 @@
+<?php
+
+
+// Replace 'YOUR_API_KEY' with your actual TMDb API key
+$apiKey = '9a23cb65445bdb0713ad45e54d8b7096';
+
+// Fetch a list of popular movies from TMDb API
+$apiUrl = "https://api.themoviedb.org/3/movie/popular?api_key=9a23cb65445bdb0713ad45e54d8b7096";
+$response = file_get_contents($apiUrl);
+$movies = json_decode($response, true)['results'];
+
+
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,13 +42,13 @@
                     <h3>Genre</h3>
                     <div class="genre-list">
                         <ul class="listUnordered">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Fantasy</a></li>
-                            <li><a href="#">Thriller</a></li>
-                            <li><a href="#">Comedy</a></li>
-                            <li><a href="#">Drama</a></li>
-                            <li><a href="#">Sci-fi</a></li>
-                            <li><a href="#">Horror</a></li>
+                            <li><a class="genre-link" data-genre="28">Action</a></li>
+                            <li><a class="genre-link" data-genre="14">Fantasy</a></li>
+                            <li><a class="genre-link" data-genre="53">Thriller</a></li>
+                            <li><a class="genre-link" data-genre="35">Comedy</a></li>
+                            <li><a class="genre-link" data-genre="18">Drama</a></li>
+                            <li><a class="genre-link" data-genre="878">Sci-fi</a></li>
+                            <li><a class="genre-link" data-genre="27">Horror</a></li>
                         </ul>
                     </div>
                 </div>
@@ -53,19 +68,15 @@
                             <label for="#">New Movies</label>
                         </div>
         
-                        <div class="filter-box">
-                            <input type="radio" value="option4">
-                            <label for="#">Movies I Haven't Seen</label>
-                        </div>
     
                         <div class="filter-box">
                             <input type="radio" value="option5">
-                            <label for="#">Ongoing</label>
+                            <label for="#">Top Rated</label>
                         </div>
     
                         <div class="filter-box">
                             <input type="radio" value="option6">
-                            <label for="#">Finished</label>
+                            <label for="#">Popular</label>
                         </div>
         
                     </form>
@@ -105,69 +116,25 @@
 
 
 
-
+    
           <div class="movies-list">
-            <div class="container">
-                <div class="images-row">
-                    <div class="img">
-                        <a href="/src/movie-description/movie.html"><img src="/xampp/htdocs/Web-Programim/src/imgs/movies/Oppenheimer-movie.jpg" alt=""></a>
-                        <p>Oppenheimer</p>
+                <div class="container">
+                  <div class="images-row">
+                    <?php foreach($movies as $movie) : ?>
+                      <div class="img" data-genre="<?= implode(', ', $movie['genre_ids']) ?>">
+                        <a href="/src/movie-description/movie.html">
+                          <img src="https://image.tmdb.org/t/p/w500<?= $movie['poster_path'] ?>" alt="<?= $movie['title'] ?>">
+                        </a>
+                        <p style="width:220px;"><?= $movie['title'] ?></p>
+                        <div class="overlay">
+                        <button class="add-to-watchlist" title="Add to Watchlist">+</button>
+
                     </div>
-
-
-                    <div class="img">
-                        <a href="#"><img src="/src/imgs/movies/4-4113_star_wars_movie_poster_rey_ma.jpg" alt=""></a>
-                        <p>Star Wars: The Last Jedi</p>
-                    </div>
-
-
-                    <div class="img">
-                        <a href="#"><img src="/src/imgs/movies/1131w-rLty9dwhGG4.webp" alt=""></a>
-                        <p>Wood</p>
-                    </div>
-
-
-                    <div class="img">
-                        <a href="#"><img src="/src/imgs/movies/71KPOvu-hOL._AC_UF894,1000_QL80_.jpg" alt=""></a>
-                        <p>The Joker</p>
-                    </div>
-
-
-
-                    <div class="img">
-                        <a href="#"><img src="/src/imgs/movies/black-panther-web.jpg" alt=""></a>
-                        <p>Black Panther</p>
-                    </div>
-
-
-                    <div class="img">
-                        <a href="#"><img src="/src/imgs/movies/Elemental-Fandango-Character-Poster.jpg" alt=""></a>
-                        <p>Elemental</p>
-                    </div>
-
-
-                    <div class="img">
-                        <a href="#"><img src="/src/imgs/movies/images.jpg" alt=""></a>
-                        <p>1917</p>
-                    </div>
-
-                    <div class="img">
-                        <a href="#"><img src="/src/imgs/movies/KillersFlowerMoon_Poster_2023.jpg" alt=""></a>
-                        <p>Killers of the FlowerMoon</p>
-                    </div>
-
-                    <div class="img">
-                        <a href="#"><img src="/src/imgs/movies/spiderman-709x1024.webp" alt=""></a>
-                        <p>Accross the Spider-verse</p>
-                    </div>
-
-                    <div class="img">
-                        <a href="#"><img src="/src/imgs/movies/barbie.png" alt=""></a>
-                        <p>Barbie</p>
-                    </div>
+                      </div>
+                    <?php endforeach; ?>
+                  </div>
                 </div>
-            </div>
-          </div>
+        </div>
         
       </div>
 
@@ -191,5 +158,38 @@
 
     <!-- HAMBURGER MENU  -->
     <script src="/Web-Programim/src/hamburger-menu.js"></script>
+
+
+
+   <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all genre links
+            var genreLinks = document.querySelectorAll('.genre-link');
+
+            // Get all movie elements
+            var movieElements = document.querySelectorAll('.img');
+
+            // Add click event listener to each genre link
+            genreLinks.forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    // Prevent default link behavior
+                    event.preventDefault();
+
+                    // Get the selected genre
+                    var selectedGenre = link.getAttribute('data-genre');
+
+                    // Show/hide movies based on the selected genre
+                    movieElements.forEach(function (movie) {
+                        var movieGenres = movie.getAttribute('data-genre');
+                        if (movieGenres.includes(selectedGenre)) {
+                            movie.style.display = 'block';
+                        } else {
+                            movie.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

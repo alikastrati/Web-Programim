@@ -1,3 +1,47 @@
+<?php
+
+if (isset($_GET['id'])) {
+  $movieId = $_GET['id'];
+
+  $movieDetailsURL = "https://api.themoviedb.org/3/movie/{$movieId}?api_key=9a23cb65445bdb0713ad45e54d8b7096";
+  $response = file_get_contents($movieDetailsURL);
+  $movieDetails = json_decode($response, true);
+
+  $title = $movieDetails['title'];
+  $description = $movieDetails['overview'];
+  $genres = $movieDetails['genres']; 
+  $voteCount = $movieDetails['vote_count'];
+  $originCountry = $movieDetails['original_language'];
+  $posterPath = $movieDetails['poster_path'];
+  $voteAverage = $movieDetails['vote_average'];
+  
+
+  // Extracting genre names from the genres array
+  $genreNames = array_map(function($genre) {
+      return $genre['name'];
+  }, $genres);
+
+  $genresString = implode(', ', $genreNames);
+
+  // Fetch trailer videos
+  $videosURL = "https://api.themoviedb.org/3/movie/{$movieId}/videos?api_key=9a23cb65445bdb0713ad45e54d8b7096";
+  $videosResponse = file_get_contents($videosURL);
+  $videosData = json_decode($videosResponse, true);
+
+  $trailers = [];
+
+  // Filter for trailers only
+  foreach ($videosData['results'] as $video) {
+      if ($video['type'] === 'Trailer') {
+          $trailers[] = $video;
+      }
+  }
+} else {
+  echo 'Failed!';
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,13 +69,13 @@
       <div class="movie">
         <div class="container">
             <div class="poster">
-                <img src="/src/imgs/movies/Oppenheimer-movie.jpg" alt="">
+                <img src="https://image.tmdb.org/t/p/w500<?= $posterPath ?>" alt="<?= $title ?>">
             </div>
 
             <div class="movie-details">
                 <div class="movie-title">
-                    <h2>Oppenheimer</h2>
-                    <p>(2023) * Thriller, Drama</p>
+                    <h2><?= $title ?></h2>
+                    <p><?= $genresString ?></p>
                 </div>
 
 
@@ -54,8 +98,15 @@
 
 
                         <li>
-                            <a href="#" class="trailer">Play Trailer</a>
-                        </li>
+            <?php
+            if (!empty($trailers)) {
+                $firstTrailerKey = $trailers[0]['key'];
+                echo "<a href='https://www.youtube.com/watch?v={$firstTrailerKey}' class='trailer' target='_blank'>Play Trailer</a>";
+            } else {
+                echo "<span>No trailers available</span>";
+            }
+            ?>
+        </li>
                     </ul>
                 </div>
 
@@ -63,14 +114,14 @@
 
                 <div class="movie-description">
                     <h3>Overview</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, molestiae eos soluta maxime numquam quisquam quasi cum omnis, praesentium, facere ex voluptate cupiditate eaque commodi harum deserunt eligendi nobis a delectus accusamus rerum? Impedit mollitia, nihil sed neque adipisci quia soluta vero aliquam delectus dolorum at excepturi, dignissimos blanditiis repellat.</p>
+                    <p><?= $description ?></p>
                 </div>
 
-                <h3>Credits</h3>
+                <h3>More Info</h3>
                 <div class="credits">
-                    <p>Producer 1</p>
-                    <p>Producer 1</p>
-                    <p>Producer 1</p>
+                    <p>Average Rating : <?= $voteAverage ?></p>
+                    <p>Vote Count : <?= $voteCount ?></p>
+                    <p>Language : <?= $originCountry ?></p>
                 </div>
             </div>
           </div>
@@ -193,10 +244,12 @@
         <!--FOOTER PHP-->
         <?php include '/xampp/htdocs/Web-Programim/phpGlobal/footer.php';?>
 
-      <!-- SEARCH BAR  -->
-      <script src="/Web-Programim/src/searchbar.js"></script>
+     <!-- SEARCH BAR -->
+  <script src="/Web-Programim/jsGlobal/searchbar.js"></script>
 
-      <!-- HAMBURGER MENU  -->
-    <script src="/Web-Programim/src/hamburger-menu.js"></script>
+
+  
+<!-- Hamburger Menu Script-->
+<script src="/Web-Programim/jsGlobal/hamburger-menu.js"></script>
 </body>
 </html>

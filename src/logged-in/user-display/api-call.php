@@ -3,7 +3,6 @@ $apiKey = '9a23cb65445bdb0713ad45e54d8b7096';
 $trendingURL = "https://api.themoviedb.org/3/trending/movie/week?api_key={$apiKey}";
 
 
-session_start();
 if (!isset($_SESSION['trendingMovies'])) {
     
     $response = file_get_contents($trendingURL);

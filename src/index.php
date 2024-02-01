@@ -1,26 +1,10 @@
 <?php 
+require_once 'APIRequest.php';
 
-$trendingURL = 'https://api.themoviedb.org/3/trending/movie/week?api_key=9a23cb65445bdb0713ad45e54d8b7096';
+$apiKeyU = '9a23cb65445bdb0713ad45e54d8b7096';
+$apiRequest = new APIRequest($apiKeyU);
 
-
-// GET API REQUEST (file_get_contents)
-$response = file_get_contents($trendingURL);
-
-
-// DECODE JSON 
-
-$data = json_decode($response, true);
-
-
-$trendingMovies = [];
-// OUTPUT 
-if(isset($data['results']) && !empty($data['results'])) {
-    $trendingMovies = $data['results'];
-}
-else {
-    echo 'Failed to retrieve data!';
-}
-
+$trendingMovies = $apiRequest->getTrendingMovies();
 
 ?>
 
@@ -54,15 +38,13 @@ else {
       
     <!-- MAIN HEADER (MOVIES , TRENDING SECTION) -->
     <div class="header-home">
-    
-     
+  
       
       
       <div class="imgContainer">
         <div class="img-slider">
 
-        
-        <?php include 'api-call.php';?>
+        <?php $sliderMovies = $apiRequest->getSliderMovies(); ?>
          
           <div class="navigation">
             <div class="btn" id="prevBtn"><</div>
@@ -91,17 +73,21 @@ else {
   <!-- TOP 100 SECTION START -->
 
 
-  <div class="top100">
+  <!-- TOP 100 SECTION START -->
+<div class="top100">
   <p id="paragraph">Trending</p>
   <div class="container">
     <?php foreach ($trendingMovies as $movie) : ?>
       <div class="top100-img">
-        <a href=""><img src="https://image.tmdb.org/t/p/w500<?= $movie['poster_path'] ?>" alt="<?= $movie['title'] ?>"></a>
+        <a href="/Web-Programim/src/movie-description/movie.php?id=<?= $movie['id'] ?>">
+          <img src="https://image.tmdb.org/t/p/w500<?= $movie['poster_path'] ?>" alt="<?= $movie['title'] ?>">
+        </a>
         <h2><?= $movie['title'] ?></h2>
       </div>
     <?php endforeach; ?>
   </div>
 </div>
+<!-- TOP 100 SECTION END -->
   
     <!-- TOP 100 SECTION END -->
 
@@ -115,7 +101,7 @@ else {
       <div class="container">
         
         <div class="poster-review">
-          <img src="/src/imgs/icons/barbie-transparent.png" alt="barbie">
+          <img src="/Web-Programim/src/imgs/icons/barbie-transparent.png" alt="barbie">
         </div>
 
         
@@ -331,12 +317,12 @@ else {
 
 
   <!-- SEARCH BAR -->
-  <script src="searchbar.js"></script>
+  <script src="/Web-Programim/jsGlobal/searchbar.js"></script>
 
 
   
     <!-- Hamburger Menu Script-->
-    <script src="hamburger-menu.js"></script>
+    <script src="/Web-Programim/jsGlobal/hamburger-menu.js"></script>
 
 
   

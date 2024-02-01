@@ -421,8 +421,13 @@
 
 
 
-      <!-- SEARCH BAR  -->
-      <script src="/Web-Programim/src/searchbar.js"></script>
+ <!-- SEARCH BAR -->
+ <script src="/Web-Programim/jsGlobal/searchbar.js"></script>
+
+
+  
+<!-- Hamburger Menu Script-->
+<script src="/Web-Programim/jsGlobal/hamburger-menu.js"></script>
 
   
 
@@ -487,11 +492,6 @@
 
   
 
-
-    <!-- HAMBURGER MENU  -->
-    <script src="/Web-Programim/src/hamburger-menu.js"></script>
-    
-    
 
 
 

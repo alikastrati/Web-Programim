@@ -1,3 +1,32 @@
+<?php 
+
+$trendingURL = 'https://api.themoviedb.org/3/trending/movie/week?api_key=9a23cb65445bdb0713ad45e54d8b7096';
+
+
+// GET API REQUEST (file_get_contents)
+$response = file_get_contents($trendingURL);
+
+
+// DECODE JSON 
+
+$data = json_decode($response, true);
+
+
+$trendingMovies = [];
+// OUTPUT 
+if(isset($data['results']) && !empty($data['results'])) {
+    $trendingMovies = $data['results'];
+}
+else {
+    echo 'Failed to retrieve data!';
+}
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +46,10 @@
 <body>  
     
       
-      <!-- NAVBAR -->
-      <?php include '/xampp/htdocs/Web-Programim/phpGlobal/headerUser.php';?>
+    <!--HEADER PHP-->
+    <?php include '/xampp/htdocs/Web-Programim/phpGlobal/headerUser.php';?>
     
  
-      
    
       
     <!-- MAIN HEADER (MOVIES , TRENDING SECTION) -->
@@ -33,78 +61,15 @@
       <div class="imgContainer">
         <div class="img-slider">
 
-          <div class="slide active">
-            <img src="/src/imgs/nav/kung-fu-panda-2-ep-dreamworks-animation.jpg" alt="movie1">
-            <div class="info">
-              <h2>Kung Fu Panda</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est itaque similique atque ipsum sint.</p>
-              <div class="buttons">
-                <button><a href="https://www.youtube.com/watch?v=NRc-ze7Wrxw">Watch Trailer</a></button>
-                <button id="watchBtn">Add to Watch List</button>
-              </div>
-            </div>
-          </div>
-  
-  
-          <div class="slide">
-            <img src="/src/imgs/nav/SV2_mpp0420.1010_RT_sb_v1-copy.jpg" alt="movie2">
-            <div class="info">
-              <h2>Spiderman Accross The SpiderVerse</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est itaque similique atque ipsum sint.</p>
-              <div class="buttons">
-                <button><a href="https://www.youtube.com/watch?v=cqGjhVJWtEg&pp=ygUqc3BpZGVyIG1hbiBhY3Jvc3MgdGhlIHNwaWRlciB2ZXJzZSB0cmFpbGVy">Watch Trailer</a></button>
-                <button id="watchBtn">Add to Watch List</button>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="slide">
-            <img src="https://res.cloudinary.com/ybmedia/image/upload/c_crop,h_748,w_1332,x_3,y_132/c_fill,f_auto,h_900,q_auto,w_1600/v1/m/b/d/bdc65a884c00ef4c925cadba059e7bc08a30b39c/20-facts-might-know-guardians-galaxy.jpg" alt="">
-            <div class="info">
-              <h2>Guardians of The Galaxy</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est itaque similique atque ipsum sint.</p>
-              <div class="buttons">
-                <button><a href="https://www.youtube.com/watch?v=u3V5KDHRQvk&pp=ygUhZ3VhcmRpYW5zIG9mIHRoZSBnYWxheHkgMyB0cmFpbGVy">Watch Trailer</a></button>
-                <button id="watchBtn">Add to Watch List</button>
-              </div>
-
-            </div>
-          </div>
-
-
-          <div class="slide">
-            <img src="https://www.hollywoodreporter.com/wp-content/uploads/2022/12/Cillian-Murphy-Oppenheimer-Still-Publicity-H-2022.jpg?w=1296" alt="movie3">
-            <div class="info">
-              <h2>Oppenheimer</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est itaque similique atque ipsum sint.</p>
-              <div class="buttons">
-                <button><a href="https://www.youtube.com/watch?v=uYPbbksJxIg&pp=ygUTb3BwZW5oZWltZXIgdHJhaWxlcg%3D%3D">Watch Trailer</a></button>
-                <button id="watchBtn">Add to Watch List</button>
-              </div>
-
-            </div>
-          </div>
-
-
-          <div class="slide">
-            <img src="https://cdn.mos.cms.futurecdn.net/v7d9BmddPkF6QBqLdkuhK7.jpg" alt="movie4">
-            <div class="info">
-              <h2>Asteroid City</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est itaque similique atque ipsum sint.</p>
-              <div class="buttons">
-                <button><a href="https://www.youtube.com/watch?v=9FXCSXuGTF4&pp=ygUQYXN0ZXJvaWQgdHJhaWxlcg%3D%3D">Watch Trailer</a></button>
-                <button id="watchBtn">Add to Watch List</button>
-              </div>
-
-            </div>
-          </div>
-
+        
+        <?php include 'api-call.php';?>
+         
           <div class="navigation">
-            <div class="btn" id="prevBtn">&#8678;</div>
-            <div class="btn" id="nextBtn">&#8680;</div>
+            <div class="btn" id="prevBtn"><</div>
+            <div class="btn" id="nextBtn">></div>
           </div>
-  
+
+        
   
   
         </div>
@@ -124,54 +89,20 @@
 
 
   <!-- TOP 100 SECTION START -->
-  
-    <div class="top100">
-      <p id="paragraph">Top 100 IMDb</p>
-      <div class="container">
-        <div class="top100-img">
-          <a href=""><img src="/src/imgs/movies/Oppenheimer-movie.jpg" alt="Oppenheimer"></a>
-          <h2>Oppenheimer</h2>
-        </div>
 
 
-        <div class="top100-img">
-          <a href=""><img src="/src/imgs/movies/black-panther-web.jpg" alt="Black Panther"></a>
-          <h2>Black Panther</h2>
-        </div>
-
-
-        <div class="top100-img">
-          <a href=""><img src="/src/imgs/movies/KillersFlowerMoon_Poster_2023.jpg" alt="Killers of the Flowermoon"></a>
-          <h2>Killers of the Flowermoon</h2>
-        </div>
-
-        <div class="top100-img">
-          <a href=""><img src="/src/imgs/movies/Elemental-Fandango-Character-Poster.jpg" alt="Elemental"></a>
-          <h2>Elemental</h2>
-        </div>
-
-
-        <div class="top100-img">
-          <a href="/src/movie-description/movie.html"><img src="/src/imgs/movies/71KPOvu-hOL._AC_UF894,1000_QL80_.jpg" alt="The Joker"></a>
-          <h2>The Joker</h2>
-        </div>
-
-        <div class="top100-img">
-          <a href=""><img src="/src/imgs/movies/everything_everywhere_all_at_once.avif" alt="Everything Everywhere all at Once"></a>
-          <h2>Everything Everywhere all at Once</h2>
-        </div>
-
-        <div class="top100-img">
-          <a href=""><img src="/src/imgs/movies/spiderman-709x1024.webp" alt="Accross the Spider-Verse"></a>
-          <h2>Accross the Spider-Verse</h2>
-        </div>  
-
-        <div class="top100-img">
-          <a href=""><img src="/src/imgs/movies/batman.jpg" alt="The Batman"></a> 
-          <h2>The Batman</h2>
-        </div>
+  <div class="top100">
+  <p id="paragraph">Trending</p>
+  <div class="container">
+    <?php foreach ($trendingMovies as $movie) : ?>
+      <div class="top100-img">
+        <a href=""><img src="https://image.tmdb.org/t/p/w500<?= $movie['poster_path'] ?>" alt="<?= $movie['title'] ?>"></a>
+        <h2><?= $movie['title'] ?></h2>
       </div>
-    </div>
+    <?php endforeach; ?>
+  </div>
+</div>
+  
     <!-- TOP 100 SECTION END -->
 
 
@@ -184,7 +115,7 @@
       <div class="container">
         
         <div class="poster-review">
-          <img src="/src/imgs/icons/barbie-transparent.png" alt="barbie">
+          <img src="/Web-Programim/src/imgs/icons/barbie-transparent.png" alt="barbie">
         </div>
 
         
@@ -390,17 +321,24 @@
 
 
 
-    <!-- FOOTER PHP  -->
+
+
+    <!--FOOTER PHP-->
     <?php include '/xampp/htdocs/Web-Programim/phpGlobal/footer.php';?>
-    
 
   
 
 
 
+  <!-- SEARCH BAR -->
+  <script src="/Web-Programim/jsGlobal/searchbar.js"></script>
 
 
-<!-- DISPLAY  ACCOUNT -->
+  
+    <!-- Hamburger Menu Script-->
+    <script src="/Web-Programim/jsGlobal/hamburger-menu.js"></script>
+
+    <!-- DISPLAY  ACCOUNT -->
 <script>
     document.addEventListener('DOMContentLoaded', function(){
     var dropdownBtn = document.querySelector('.dropdown-btn');
@@ -419,10 +357,6 @@
 </script>
 
 
-
-
-      <!-- SEARCH BAR  -->
-      <script src="/Web-Programim/src/searchbar.js"></script>
 
   
 
@@ -460,9 +394,8 @@
       showSlide(-1);
     }
 
-
   // Start the automatic sliding
-    var repeatInterval = setInterval(nextSlide, 3000);
+    var repeatInterval = setInterval(nextSlide, 8000);
 
   // Add event listeners to buttons
     nextBtn.addEventListener('click', () => {
@@ -488,8 +421,6 @@
   
 
 
-    <!-- HAMBURGER MENU  -->
-    <script src="/Web-Programim/src/hamburger-menu.js"></script>
     
     
 

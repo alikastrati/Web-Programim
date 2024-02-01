@@ -34,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location:   /Web-Programim/src/logged-in/phpScripts/admin.php");
         }
         else {
-            header("Location: /Web-Programim/src/logged-in/phpScripts/user-index.php");
+            header("Location: /Web-Programim/src/logged-in/user-display/user-index.php");
         }
 
         exit();

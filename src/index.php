@@ -79,7 +79,7 @@ $trendingMovies = $apiRequest->getTrendingMovies();
   <div class="container">
     <?php foreach ($trendingMovies as $movie) : ?>
       <div class="top100-img">
-        <a href="/Web-Programim/src/movie-description/movie.php?id=<?= $movie['id'] ?>">
+        <a href="/Web-Programim/src/movie-description/movie.php?type=movie&id=<?= $movie['id'] ?>">
           <img src="https://image.tmdb.org/t/p/w500<?= $movie['poster_path'] ?>" alt="<?= $movie['title'] ?>">
         </a>
         <h2><?= $movie['title'] ?></h2>
@@ -89,7 +89,6 @@ $trendingMovies = $apiRequest->getTrendingMovies();
 </div>
 <!-- TOP 100 SECTION END -->
   
-    <!-- TOP 100 SECTION END -->
 
 
    
@@ -323,6 +322,24 @@ $trendingMovies = $apiRequest->getTrendingMovies();
   
     <!-- Hamburger Menu Script-->
     <script src="/Web-Programim/jsGlobal/hamburger-menu.js"></script>
+
+        <!-- DISPLAY  ACCOUNT -->
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+    var dropdownBtn = document.querySelector('.dropdown-btn');
+    var dropdownMenu = document.querySelector('.dropdown-menu');
+
+    dropdownBtn.addEventListener('click', function() {
+        dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', function (event) {
+        if (!event.target.matches('.dropdown-btn')) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+</script>
 
 
   

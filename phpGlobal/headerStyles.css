@@ -74,7 +74,6 @@ nav .search-field a:hover {
 nav .search-field .search-bar-container {
   display: none;
   position: fixed;
-  bottom: 30;
   left: 0;
   width: 100%;
   padding: 10px;
@@ -159,6 +158,41 @@ nav .search-field input {
 .lists a:active{
   border-bottom: solid 1px #FFF;
 }
+
+
+.lists .dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  border-radius: 15px;
+  background-color: var(--primary);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.lists .dropdown .dropdown-menu a{
+  color: #FFF;
+  padding: 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.lists .dropdown .dropdown-menu a:hover {
+  background-color: var(--secondary);
+}
+
+.lists .dropdown-btn {
+  background: none;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.lists .dropdown-btn:hover {
+  text-decoration: underline;
+}
+
 
 
 .hamburger {

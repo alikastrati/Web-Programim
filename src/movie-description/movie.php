@@ -1,43 +1,59 @@
 <?php
 
-if (isset($_GET['id'])) {
-  $movieId = $_GET['id'];
+// CHECK IF TYPE IS IN URL
+if (isset($_GET['type'])) {
+    $type = $_GET['type'];
 
-  $movieDetailsURL = "https://api.themoviedb.org/3/movie/{$movieId}?api_key=9a23cb65445bdb0713ad45e54d8b7096";
-  $response = file_get_contents($movieDetailsURL);
-  $movieDetails = json_decode($response, true);
+    $apiKey = '9a23cb65445bdb0713ad45e54d8b7096';
 
-  $title = $movieDetails['title'];
-  $description = $movieDetails['overview'];
-  $genres = $movieDetails['genres']; 
-  $voteCount = $movieDetails['vote_count'];
-  $originCountry = $movieDetails['original_language'];
-  $posterPath = $movieDetails['poster_path'];
-  $voteAverage = $movieDetails['vote_average'];
-  
+    // FETCH BASED ON TYPE
+    function fetchDetails($id, $type, $apiKey) {
+        $detailsURL = "https://api.themoviedb.org/3/{$type}/{$id}?api_key=9a23cb65445bdb0713ad45e54d8b7096";
+        $response = file_get_contents($detailsURL);
+        return json_decode($response, true);
+    }
 
-  // Extracting genre names from the genres array
-  $genreNames = array_map(function($genre) {
-      return $genre['name'];
-  }, $genres);
+    // CHECK IF ID PARAM IN URL
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
 
-  $genresString = implode(', ', $genreNames);
+        $details = fetchDetails($id, $type, $apiKey);
 
-  // Fetch trailer videos
-  $videosURL = "https://api.themoviedb.org/3/movie/{$movieId}/videos?api_key=9a23cb65445bdb0713ad45e54d8b7096";
-  $videosResponse = file_get_contents($videosURL);
-  $videosData = json_decode($videosResponse, true);
+        $title = $details['title'] ?? $details['name'];
+        $description = $details['overview'];
+        $genres = $details['genres'];
+        $voteCount = $details['vote_count'];
+        $originCountry = $details['original_language'];
+        $posterPath = $details['poster_path'];
+        $voteAverage = $details['vote_average'];
 
-  $trailers = [];
+        // GENRE NAMES
+        $genreNames = array_map(function($genre) {
+            return $genre['name'];
+        }, $genres);
 
-  // Filter for trailers only
-  foreach ($videosData['results'] as $video) {
-      if ($video['type'] === 'Trailer') {
-          $trailers[] = $video;
-      }
-  }
+        $genresString = implode(', ', $genreNames);
+
+        // TRAILER VIDS
+        $videosURL = "https://api.themoviedb.org/3/{$type}/{$id}/videos?api_key={$apiKey}";
+        $videosResponse = file_get_contents($videosURL);
+        $videosData = json_decode($videosResponse, true);
+
+        $trailers = [];
+
+        // FILTER FOR TRAILER ONLY
+        foreach ($videosData['results'] as $video) {
+            if ($video['type'] === 'Trailer') {
+                $trailers[] = $video;
+            }
+        }
+    } else {
+        echo 'Failed!';
+        exit;
+    }
 } else {
-  echo 'Failed!';
+    echo 'Failed!';
+    exit;
 }
 ?>
 
@@ -98,15 +114,8 @@ if (isset($_GET['id'])) {
 
 
                         <li>
-            <?php
-            if (!empty($trailers)) {
-                $firstTrailerKey = $trailers[0]['key'];
-                echo "<a href='https://www.youtube.com/watch?v={$firstTrailerKey}' class='trailer' target='_blank'>Play Trailer</a>";
-            } else {
-                echo "<span>No trailers available</span>";
-            }
-            ?>
-        </li>
+                            <a href="#" class="trailer">Play Trailer</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -236,6 +245,14 @@ if (isset($_GET['id'])) {
               
             </div>
           </div>
+
+
+        <form action="/Web-Programim/phpDatabase/testReview.php?type=movie&id=<?= $id ?>" method="POST">
+            <input type="text" name="rating" placeholder="Rating">
+            <textarea name="comment" placeholder="Your comment"></textarea>
+            <button type="submit">Submit Review</button>
+        </form>
+
 
 
 

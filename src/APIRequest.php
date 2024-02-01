@@ -41,7 +41,6 @@ class APIRequest {
     $trendingURL = 'https://api.themoviedb.org/3/trending/movie/week?api_key=' . $this->apiKey;
 
 
-        session_start();
         if (!isset($_SESSION['trendingMovies'])) {
 
             $response = file_get_contents($trendingURL);
@@ -104,18 +103,17 @@ class APIRequest {
         } else {
             echo 'Failed to retrieve trending movies data!';
         }
-
   }
 
 
 
 
-  public function displayMovies() {
-// Fetch a list of popular movies from TMDb API
-$apiUrl = "https://api.themoviedb.org/3/movie/popular?api_key=?" .$this->apiKey;
-$response = file_get_contents($apiUrl);
-$movies = json_decode($response, true)['results'];
-  }
+//   public function displayMovies() {
+// // Fetch a list of popular movies from TMDb API
+// $apiUrl = "https://api.themoviedb.org/3/movie/popular?api_key=?" .$this->apiKey;
+// $response = file_get_contents($apiUrl);
+// $movies = json_decode($response, true)['results'];
+//   }
 
 
 

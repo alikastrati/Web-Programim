@@ -21,7 +21,7 @@ body {
     min-height: 100vh;
     background-size: cover;
     background-position: center;
-    background-image: url(/src/imgs/nav/pic2.jpg);
+    background-image: url(/Web-Programim/src/imgs/nav/pic2.jpg);
     
 }
 
@@ -99,94 +99,69 @@ h1 > span {
     margin-bottom: 20px;
     color: black;
 }
-.wrapper .input-section {
-    width: 450px;
 
+.wrapper .container .left-section {
+    width: 500px;
 }
 
-.wrapper .input-section .input-box .submit-section {
+.wrapper .container .input-box {
     display: flex;
-}
-
-.wrapper .input-section .input-box .submit-section .button {
-    width: 200px;
-    margin-top: -20px;
-}
-
-.wrapper .input-section .input-box .submit-section span {
+    flex-direction: column;
+    gap: 50px;
     margin-top: 20px;
-
 }
 
-.wrapper .log-in {
-    width: 400px;
+.wrapper .container .input-box input {
+    padding: 15px;
+    width: 100%;
+    background-color: #111111;
+    border: 0.01px solid #FFF;
+    border-radius: 8px;
+    color: #FFF;
 }
 
-.wrapper .input-box {
+.wrapper .container .submit-section {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background-color: var(--primary);
-    gap: 40px;
-    
+    flex-direction: column;
+    gap: 20px;
+}
 
-}
-.input-box .input-field {
-    position: relative;
-    width: 700px;
-    height: 50%;
-    border-radius: 6px;
-    background-color: var(--primary);
-    margin: 13px 0;
-}
-.input-box .input-field input {
-    width: 100%;
-    padding: 25px;
-    height: 35px;
-    background-color: transparent;
-    outline: none;
-    font-size: 16px;
-    color: #FFF;
-    border-radius: 6px;
+.wrapper .container .submit-section .checkbox-div {
     margin-top: 30px;
-    border: solid 1px #FFF;
 }
 
-.input-box .input-field input::placeholder {
-    color: #FFF; 
-    opacity: 0.3;
-}
-.input-box .input-field i {
-    position: absolute;
-    left: 410px;
-    top: 68%;
-    transform: translateY(-50%);
-    font-size: 20px;
+.wrapper .container .submit-section label{
     color: #FFF;
 }
 
-.wrapper .container .input-section .input-box .button button {
-    width: 100%;
-    margin-top: 40px;
-    padding: 10px;
-    background-color: #A98F76;
-    font-weight: 600;
+.wrapper .container .submit-section .button button{
+    padding: 12px;
     border: none;
-    border-radius: 10px;
-}
-
-.wrapper input[type='checkbox'] {
-    margin-left: 10px;
-    
+    width: 150px;
+    font-weight: 400;
+    background-color: #A98F76;
+    cursor: pointer;
 }
 
 
-@media (max-width: 600px) {
-    .container {
-        width: 500px;
-        flex-direction: column;
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .wrapper .container .right-section {
     display: flex;

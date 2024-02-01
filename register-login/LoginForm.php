@@ -19,7 +19,7 @@
 
 
 
-    <a href="/Web-Programim/src/index.php" style="margin-top: -550px;margin-right: -60px; text-decoration: none; color: #FFF;"><p style="width: 80px;">< Home</p></a>
+    <a href="/Web-Programim/src/index.php" style="margin-top: -700px;margin-right: -60px; text-decoration: none; color: #FFF; font-weight:600;"><p style="width: 80px;">< Home</p></a>
     <div class="wrapper">
         <form action="/Web-Programim/phpDatabase/process_login.php" method="post">
 
@@ -32,23 +32,27 @@
                 <div class="left-section">
                     <div class="log-in">
                         <h1 id="header-login" style="margin-bottom: -5px;">
-                            <span style="color: #FFF;font-size: 30px;">LOG</span>
+                            <span style="color: #FFF;font-size: 30px;">SIGN</span>
                           <span style="color: #A98F76; margin-left:-10px ; font-size: 30px;">IN</span>
                         </h1>
                     </div>
                     
         
-        
-                    <div class="input-field">
-                        <input type="text" name="email" placeholder="Email" required>
-                        <i class='bx bxs-user'></i>
+                    <div class="input-box">
+                        <div class="input-field">
+                            <input type="text" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" name="password" placeholder="Password" required>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <input type="password" name="password" placeholder="Password" required>
-                        <i class='bx bxs-lock-alt'></i>
-                    </div>
+                 
                     <div class="submit-section">
-                        <input type="checkbox"><span style="color: #FFF; margin-left: 15px;">I agree to the terms and conditions</span>
+                        <div class="checkbox-div">
+                            <input type="checkbox">
+                            <label for="">I Agree!</label>
+                        </div>
+                       
                         <div class="button">
                             <button type="submit" class="btn" id="loginButton">Login</button>
                         </div>
@@ -60,10 +64,10 @@
                 <div class="right-section">
                     <div class="social-icons">
                         <h2>Get Connected With</h2>
-                        <a href="https://mail.google.com/" target="_blank"><img src="/register-login/imgs-loginform/gmail.png" alt="gmail"></a>
-                        <a href="https://www.facebook.com/" target="_blank"><img src="/register-login/imgs-loginform/fb.png" alt="facebook"></a>
-                        <a href="https://twitter.com/" target="_blank"></a>
-                        <img src="/register-login/imgs-loginform/x.png" alt="x">
+                        <a href="https://mail.google.com/" target="_blank"><img src="/Web-Programim/register-login/imgs-loginform/gmail.png" alt="gmail"></a>
+                        <a href="https://www.facebook.com/" target="_blank"><img src="/Web-Programim/register-login/imgs-loginform/fb.png" alt="facebook"></a>
+                        <a href="https://twitter.com/" target="_blank"><img src="/Web-Programim/register-login/imgs-loginform/x.png" alt="x"></a>
+                        
                     </div>
                 </div>
             </div>

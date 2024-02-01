@@ -85,10 +85,10 @@
                 <div class="right-section">
                     <div class="social-icons">
                         <h2>Get Connected With</h2>
-                        <a href="https://mail.google.com/" target="_blank"><img src="/register-login/imgs-loginform/gmail.png" alt="gmail"></a>
-                        <a href="https://www.facebook.com/" target="_blank"><img src="/register-login/imgs-loginform/fb.png" alt="facebook"></a>
-                        <a href="https://twitter.com/" target="_blank"></a>
-                        <img src="/register-login/imgs-loginform/x.png" alt="x">
+                        <a href="https://mail.google.com/" target="_blank"><img src="/Web-Programim/register-login/imgs-loginform/gmail.png" alt="gmail"></a>
+                        <a href="https://www.facebook.com/" target="_blank"><img src="/Web-Programim/register-login/imgs-loginform/fb.png" alt="facebook"></a>
+                        <a href="https://twitter.com/" target="_blank"><img src="/Web-Programim/register-login/imgs-loginform/x.png" alt="x"></a>
+                        
                     </div>
                 </div>
                

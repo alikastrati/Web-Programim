@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     if($user->registerUser($name, $username, $email, $password)) {
         $userID = $user->getUserId();
         setcookie("user_id", $userID, time() + 3600, "/");
-        header("Location: RegistrationForm.html");
+        header("Location: /Web-Programim/register-login/RegistrationForm.php");
         exit();
         
         

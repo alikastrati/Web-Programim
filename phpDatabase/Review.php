@@ -52,6 +52,26 @@ class Review {
     }
 
 
+    public function getAllReviews($limit) {
+        $sql = "SELECT r.*, u.username FROM reviews r JOIN user u ON r.user_id = u.id LIMIT ?";
+        $stmt = $this->db->getDBConnection()->prepare($sql);
+        $stmt->bind_param("i", $limit);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        $reviews = [];
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $reviews[] = $row;
+            }
+        }
+
+        return $reviews;
+    }
+
+
     private function movieExists($movieId) {
         $sql = "SELECT COUNT(*) AS count FROM movies WHERE tmdb_id = ?";
         $stmt = $this->db->getDBConnection()->prepare($sql);

@@ -23,6 +23,8 @@ class User {
         $stmt->close();
     }
 
+
+
     public function getUserId() {
         return $this->db->getDBConnection()->insert_id;
     }

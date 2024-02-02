@@ -45,17 +45,21 @@ body {
     color: white;
     display: flex;
     margin-left: 4%;
-    margin-top: 20px;
     text-transform: uppercase;
+    padding: 26px 19px;
     font-weight: 600;
     font-size: 50px;
 }
 
-.mainContainer{display: flex;}
+.mainContainer{
+  display: flex;
+  background-color: #171A23;
+}
 
 .mainContainer .movies-list .container .images-row {
-    margin: 120px 70px;
+    margin: 10px 70px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -66,6 +70,7 @@ body {
     width: 30vh;
     letter-spacing: 0.8px;
     border-radius: 20px;
+
 }
 
 .mainContainer .movies-list .container .images-row .img >p{

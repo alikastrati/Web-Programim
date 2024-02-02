@@ -17,6 +17,8 @@
 
 .mainContainer .right-panel .tableContainer {
     margin: 30px 30px;
+    height: 90vh; 
+    overflow-y: auto; 
 }
 
 .mainContainer .right-panel h2{

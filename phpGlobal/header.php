@@ -1,6 +1,9 @@
 <link rel="stylesheet" href="/Web-Programim/phpGlobal/headerStyles.css">
 <?php
-session_start();
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 echo '<div class="navBar" id="navbar">
     <nav>
@@ -54,7 +57,7 @@ echo '<div class="navBar" id="navbar">
             
                 echo '&#9662;</button>
                         <div class="dropdown-menu" id="dropdownMenu">
-                            <a href="/Web-Programim/src/logged-in/userPages/watchlist.php">Watchlist</a>
+                            <a href="/Web-Programim/wtv/Watchlist.php">Watchlist</a>
                             <a href="/Web-Programim/phpDatabase/logout.php">Log out</a>
                         </div>
                     </div>';

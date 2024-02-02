@@ -138,6 +138,9 @@ body {
   margin-left: 15px;
 }
 
+
+
+
 .img-slider .slide .info h2{
   text-transform: uppercase;
   font-family: 'Rubik';
@@ -153,6 +156,10 @@ body {
   color: #FFF;
   font-size: 15px ;
   margin: 10px 5px;
+}
+
+#button-class {
+  display: flex;
 }
 
 

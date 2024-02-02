@@ -139,7 +139,13 @@ if (isset($_GET['type'])) {
 
 
         <div class="reviews">
-      
+        <div class="submit-review">
+            <form class="submit-form" action="/Web-Programim/phpDatabase/testReview.php?type=movie&id=<?= $id ?>" method="POST">
+                <input type="text" name="rating" placeholder="Rating">
+                <textarea name="comment" placeholder="Your comment"></textarea>
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
 
             <div class="container">
               <!-- NAV BAR START -->
@@ -184,75 +190,14 @@ if (isset($_GET['type'])) {
       
       
       
-                <div class="reviewBox">
-                  <div class="account-nav">
-                    <img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">
-                    <p id='account' style="display: inline;">Account Name</p>
-                  </div>
-        
-                  <div class="review-bottom">
-                    <p id="reviewText">Lorem ipsum dolor sit.</p>
-                    <button><i class="fa fa-thumbs-up"></i></button>
-                    <button><i class="fa fa-thumbs-down"></i></button>
-                  </div>
-                </div>
-      
-      
-      
-      
-                <div class="reviewBox">
-                  <div class="account-nav">
-                    <img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">
-                    <p id='account' style="display: inline;">Account Name</p>
-                  </div>
-        
-                  <div class="review-bottom">
-                    <p id="reviewText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, nostrum!</p>
-                    <button><i class="fa fa-thumbs-up"></i></button>
-                    <button><i class="fa fa-thumbs-down"></i></button>
-                  </div>
-                </div>
-
-
-                <div class="reviewBox">
-                  <div class="account-nav">
-                    <img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">
-                    <p id='account' style="display: inline;">Account Name</p>
-                  </div>
-        
-                  <div class="review-bottom">
-                    <p id="reviewText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, nostrum!</p>
-                    <button><i class="fa fa-thumbs-up"></i></button>
-                    <button><i class="fa fa-thumbs-down"></i></button>
-                  </div>
-                </div>
-
-
-                <div class="reviewBox">
-                  <div class="account-nav">
-                    <img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">
-                    <p id='account' style="display: inline;">Account Name</p>
-                  </div>
-        
-                  <div class="review-bottom">
-                    <p id="reviewText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, nostrum!</p>
-                    <button><i class="fa fa-thumbs-up"></i></button>
-                    <button><i class="fa fa-thumbs-down"></i></button>
-                  </div>
-                </div>
         
               </div>
               
             </div>
           </div>
 
-
-        <form action="/Web-Programim/phpDatabase/testReview.php?type=movie&id=<?= $id ?>" method="POST">
-            <input type="text" name="rating" placeholder="Rating">
-            <textarea name="comment" placeholder="Your comment"></textarea>
-            <button type="submit">Submit Review</button>
-        </form>
-
+        
+        
 
 
 
@@ -261,8 +206,13 @@ if (isset($_GET['type'])) {
         <!--FOOTER PHP-->
         <?php include '/xampp/htdocs/Web-Programim/phpGlobal/footer.php';?>
 
-     <!-- SEARCH BAR -->
-  <script src="/Web-Programim/jsGlobal/searchbar.js"></script>
+        <!-- SEARCH BAR -->
+        <script src="/Web-Programim/jsGlobal/searchbar.js"></script>
+
+
+        
+     <!-- DISPLAY  ACCOUNT -->
+     <script src="/Web-Programim/jsGlobal/displayacc.js"></script>
 
 
   

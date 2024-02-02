@@ -124,7 +124,19 @@ $tvShows = json_decode($response, true)['results'];
                          
                          <p class="movie-title" style="width:220px;"><?= $tvshow['name'] ?></p>
                          <div class="overlay">
-                             <button class="add-to-watchlist" title="Add to Watchlist">+</button>
+                         <?php
+                            // Check if user is logged in
+                            if (isset($_SESSION['user_id'])) :
+                            ?>
+                            <form method="post" action="/Web-Programim/src/movies-page/watchlist.php">
+                                <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
+                                <input type="hidden" name="movie_id" value="<?= $tvshow['id'] ?>">
+                                <input type="hidden" name="poster_path" value="https://image.tmdb.org/t/p/w500<?= $tvshow['poster_path'] ?>">
+                                <button type="submit" class="add-to-watchlist" title="Add to Watchlist">+</button>
+                            </form>
+                            <?php else : ?>
+                            <button class="add-to-watchlist" title="Add to Watchlist"><a style="text-decoration: none;"href="/Web-Programim/register-login/LoginForm.php">+</a></button>
+                            <?php endif; ?>
                          </div>
                      </div>
                     <?php endforeach; ?>
@@ -155,6 +167,9 @@ $tvShows = json_decode($response, true)['results'];
     <!-- HAMBURGER MENU  -->
     <script src="/Web-Programim/src/hamburger-menu.js"></script>
 
+     <!-- DISPLAY  ACCOUNT -->
+     <script src="/Web-Programim/jsGlobal/displayacc.js"></script>
+
 
 
     <script>
@@ -167,7 +182,6 @@ $tvShows = json_decode($response, true)['results'];
 
         genreLinks.forEach(function (link) {
             link.addEventListener('click', function (event) {
-                // Prevent default link behavior
                 event.preventDefault();
 
                 

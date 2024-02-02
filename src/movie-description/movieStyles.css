@@ -48,6 +48,31 @@ body {
 }
 
 
+.submit-review .submit-form {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 40px;
+
+}
+.submit-review .submit-form input, textarea, button {
+  border-radius: 5px;
+  padding: 12px;}
+.submit-review .submit-form input, textarea {
+  background-color: #171820;
+  border: 0.01px solid #FFF;
+  color: #FFF;
+}
+
+.submit-review .submit-form button {
+  border: none;
+  background-color: #A98F76;
+  cursor: pointer;
+}
+
+
+
+
 .reviews .container {
     /* display: flex; */
     height: 400px;
@@ -137,8 +162,7 @@ body {
   
   
   
-  
-  
+ 
 
 
 

@@ -124,95 +124,40 @@ $trendingMovies = $apiRequest->getTrendingMovies();
   
           
           <div class="reviewBoxContainer">
-            <div class="reviewBox">
-              <div class="account-nav">
-                <img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">
-                <p id='account' style="display: inline;">Account Name</p>
-              </div>
+          <?php
+                require_once '/xampp/htdocs/Web-Programim/phpDatabase/Database.php';
+                require_once '/xampp/htdocs/Web-Programim/phpDatabase/Review.php';
+                require_once '/xampp/htdocs/Web-Programim/phpDatabase/User.php';
+
+                $db = new Database();
+                $review = new Review($db);
+                $user = new User($db);
+
+
+                // Get user reviews
+                $userReviews = $review->getAllReviews(10);
+
+
+                // Display user reviews
+                foreach ($userReviews as $userReview) {
+                    echo '<div class="reviewBox">';
+                    echo '<div class="account-nav">';
+                    echo '<img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">';
+                    
+                    // Display the username
+                    echo '<p id="account" style="display: inline;">' . $userReview['username']  . '</p>';
+                    
+                    echo '</div>';
+                    echo '<div class="review-bottom">';
+                    echo '<p id="reviewText">' . $userReview['comment'] . '</p>';
+                    echo '<button><i class="fa fa-thumbs-up"></i></button>';
+                    echo '<button><i class="fa fa-thumbs-down"></i></button>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+                ?>
     
-              <div class="review-bottom">
-                <p>Lorem ipsum dolor sit.</p>
-                <button><i class="fa fa-thumbs-up"></i></button>
-                <button><i class="fa fa-thumbs-down"></i></button>
-              </div>
-            </div>
-    
-    
-    
-            <div class="reviewBox">
-              <div class="account-nav">
-                <img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">
-                <p id='account' style="display: inline;">Account Name</p>
-              </div>
-    
-              <div class="review-bottom">
-                <p id="reviewText">Lorem ipsum dolor sit.</p>
-                <button><i class="fa fa-thumbs-up"></i></button>
-                <button><i class="fa fa-thumbs-down"></i></button>
-              </div>
-            </div>
   
-  
-  
-  
-            <div class="reviewBox">
-              <div class="account-nav">
-                <img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">
-                <p id='account' style="display: inline;">Account Name</p>
-              </div>
-    
-              <div class="review-bottom">
-                <p id="reviewText">Lorem ipsum dolor sit.</p>
-                <button><i class="fa fa-thumbs-up"></i></button>
-                <button><i class="fa fa-thumbs-down"></i></button>
-              </div>
-            </div>
-  
-  
-  
-  
-            <div class="reviewBox">
-              <div class="account-nav">
-                <img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">
-                <p id='account' style="display: inline;">Account Name</p>
-              </div>
-    
-              <div class="review-bottom">
-                <p id="reviewText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, nostrum!</p>
-                <button><i class="fa fa-thumbs-up"></i></button>
-                <button><i class="fa fa-thumbs-down"></i></button>
-              </div>
-            </div>
-  
-  
-            <div class="reviewBox">
-              <div class="account-nav">
-                <img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">
-                <p id='account' style="display: inline;">Account Name</p>
-              </div>
-    
-              <div class="review-bottom">
-                <p id="reviewText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, nostrum!</p>
-                <button><i class="fa fa-thumbs-up"></i></button>
-                <button><i class="fa fa-thumbs-down"></i></button>
-              </div>
-            </div>
-  
-  
-  
-            <div class="reviewBox">
-              <div class="account-nav">
-                <img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">
-                <p id='account' style="display: inline;">Account Name</p>
-              </div>
-    
-              <div class="review-bottom">
-                <p id="reviewText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, nostrum!</p>
-                <button><i class="fa fa-thumbs-up"></i></button>
-                <button><i class="fa fa-thumbs-down"></i></button>
-              </div>
-            </div>
-    
           </div>
         </div>
         
@@ -323,23 +268,8 @@ $trendingMovies = $apiRequest->getTrendingMovies();
     <!-- Hamburger Menu Script-->
     <script src="/Web-Programim/jsGlobal/hamburger-menu.js"></script>
 
-        <!-- DISPLAY  ACCOUNT -->
-<script>
-    document.addEventListener('DOMContentLoaded', function(){
-    var dropdownBtn = document.querySelector('.dropdown-btn');
-    var dropdownMenu = document.querySelector('.dropdown-menu');
-
-    dropdownBtn.addEventListener('click', function() {
-        dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
-    });
-
-    document.addEventListener('click', function (event) {
-        if (!event.target.matches('.dropdown-btn')) {
-            dropdownMenu.style.display = 'none';
-        }
-    });
-});
-</script>
+    <!-- DISPLAY  ACCOUNT -->
+    <script src="/Web-Programim/jsGlobal/displayacc.js"></script>
 
 
   

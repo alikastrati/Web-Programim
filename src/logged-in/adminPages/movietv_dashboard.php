@@ -1,6 +1,9 @@
 <?php 
+session_start();
+
 require_once('/xampp/htdocs/Web-Programim/phpDatabase/Database.php');
-require_once('/xampp/htdocs/Web-Programim/phpDatabase/User.php'); 
+require_once('/xampp/htdocs/Web-Programim/phpDatabase/User.php');
+require_once('/xampp/htdocs/Web-Programim/phpDatabase/Movies.php'); 
 
 $db = new Database();
 $conn = $db->getDBConnection();
@@ -40,7 +43,6 @@ $allMovies = $movies->getAllMovies();
                 <div class="tableContainer">
                     <h2>Manage Movies/TV Shows</h2>    
                     
-                    <a href="\Web-Programim\src\logged-in\phpScripts\add-user.php" id="addUser">Add Movie</a>
                     
                     <table class="greyGridTable">
                     <thead>

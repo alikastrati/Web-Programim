@@ -3,11 +3,13 @@ session_start();
 
 require_once('/xampp/htdocs/Web-Programim/phpDatabase/Database.php');
 require_once('/xampp/htdocs/Web-Programim/phpDatabase/User.php'); 
+require_once('/xampp/htdocs/Web-Programim/phpDatabase/News.php'); 
 
 $db = new Database();
 $conn = $db->getDBConnection();
 
 $user = new User($db); 
+$news = new News($db);
 
 ?>
 
@@ -38,14 +40,11 @@ $user = new User($db);
             <!-- RIGHT PANNEL  -->
             <div class="right-panel">
                 <div class="tableContainer">
-                    <h2>User Panel</h2>    
-                    
-                    <a href="\Web-Programim\src\logged-in\phpScripts\add-user.php" id="addUser">Add User</a>
-
-                  <?php 
-                    // include('C:\xampp\htdocs\Web-Programim\src\logged-in\phpScripts\fetch-users.php'); 
-                    $user->fetchUser();
-                  ?>
+                <h2>News Panel</h2>
+                <a href="\Web-Programim\src\logged-in\phpScripts\add-news.php" id="addUser">Add News</a>
+                <?php
+                $news->fetchNews();
+                ?>
                 </div>
                 
 

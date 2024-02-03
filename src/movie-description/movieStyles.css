@@ -48,6 +48,12 @@ body {
 }
 
 
+#reviewHeader {
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+}
+
 .submit-review .submit-form {
   display: flex;
   justify-content: center;
@@ -248,7 +254,6 @@ body {
 .movie .container .movie-details .credits {
     display: flex;
     gap: 50px;
-    /* justify-content: space-evenly; */
     margin: 30px;
     color: #FFF;
     width: 80%;
@@ -258,3 +263,75 @@ body {
 
 
 
+@media only screen and (max-width: 768px) {
+  body {
+      margin: 0;
+  }
+
+  
+
+  .movie .container {
+      margin-top: 50px;
+      margin-left: 0;
+      flex-direction: column;
+      align-items: center; 
+  }
+
+  .movie .container .poster img {
+      height: 40vh;
+      width: auto;
+  }
+
+  .movie .container .movie-details {
+      margin: 20px;
+      width: 100%;
+      text-align: center; 
+  }
+
+  .movie .container .movie-details .movie-title {
+      margin: 20px 0;
+  }
+
+  .movie .container .movie-details .movie-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    
+  }
+
+
+  .movie .container .movie-details .movie-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    
+  }
+
+  .movie .container .movie-details .credits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    
+  }
+
+  .reviews .submit-review form {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+
+  .reviews .container .reviewBox { 
+    color: #FFF;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(63, 63, 63, 0.8) 40%, rgba(34, 34, 34, 0) 100%);
+    margin: 30px 30px;
+  
+  }
+
+
+  
+}

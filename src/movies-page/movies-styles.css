@@ -55,11 +55,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    margin-left: 15px;
 
 }
 
 .leftSection .container .genres{
-    width: 60%;
+    width: 100%;
     margin: 110px auto 20px;
     color: #FFF;
     border-radius: 30px;
@@ -207,7 +208,131 @@ body {
 
 
 
+@media screen and (max-width: 1300px) {
+    .mainContainer {
+        flex-direction: column;
+    }
 
+    .leftSection {
+        width: 100%;
+        margin: 0;
+    }
+
+    .leftSection .container {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .leftSection .container h3{
+        margin-top: 50px;
+    }
+    .leftSection .container .genres {
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+    .leftSection .container .genres .listUnordered {
+        display: flex;
+        justify-content: center;
+    }
+
+    .leftSection .container .genres,
+    .leftSection .container .filters {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+
+    .mainContainer .movies-list {
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+
+    .mainContainer .movies-list .container .images-row {
+        margin: 20px auto; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+   
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .mainContainer {
+        flex-direction: column;
+    }
+
+    .leftSection {
+        width: 100%;
+        margin: 0;
+    }
+
+    .leftSection .container {
+        flex-direction: column;
+    }
+
+    .leftSection .container h3{
+        margin-top: 30px;
+    }
+
+
+
+    .leftSection .container .genres,
+    .leftSection .container .filters {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .leftSection .container .release-dates {
+        flex-direction: column;
+    }
+
+    .mainContainer .movies-list {
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+
+    .mainContainer .movies-list .container .images-row {
+        margin: 20px auto; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+   
+}
+
+
+
+
+@media screen and (max-width: 400px) {
+    .mainContainer {
+        flex-direction: column;
+    }
+
+    .leftSection {
+        width: 100%;
+        margin: 0;
+    }
+
+    .leftSection .container {
+        flex-direction: column;
+    }
+
+    .leftSection .container h3{
+        margin-top: 30px;
+    }
+
+  
+}
 
 
 

@@ -43,7 +43,7 @@ $trendingMovies = $apiRequest->getTrendingMovies();
   
       
       
-      <div class="imgContainer">
+      <div class="imgContainer" id="imgContainer">
         <div class="img-slider">
 
         <?php $sliderMovies = $apiRequest->getSliderMovies(); ?>
@@ -146,7 +146,7 @@ $trendingMovies = $apiRequest->getTrendingMovies();
                 foreach ($userReviews as $userReview) {
                     echo '<div class="reviewBox">';
                     echo '<div class="account-nav">';
-                    echo '<img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">';
+                    echo '<img src="/Web-Programim/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">';
                     
                     // Display the username
                     echo '<p id="account" style="display: inline;">' . $userReview['username']  . '</p>';
@@ -204,32 +204,39 @@ $trendingMovies = $apiRequest->getTrendingMovies();
 
 
 
+      <div class="slideshow-container" id="news-section">
 
+  <?php
+  require_once('\xampp\htdocs\Web-Programim\phpDatabase\News.php');
+  // Instantiate News class
+  $news = new News($db);
+  // Fetch all news
+  $allNews = $news->getAllNews();
 
-    <!-- MOVIE/TV SHOWS NEWS  -->
-    <?php
-// Assuming you have a method in your Database class to execute SELECT queries
-$result = $db->getDBConnection()->query("SELECT * FROM news");
+  // Display news dynamically
+  foreach ($allNews as $index => $article) {
+      echo '<div class="mySlides fade">';
+      echo '<div class="numbertext">' . ($index + 1) . ' / ' . count($allNews) . '</div>';
+      echo '<img src="' . $article['image_path'] . '" style="width:100%">';
+      echo '<div class="text">' . $article['title'] . '</div>';
+      echo '</div>';
+  }
+  ?>
 
-if ($result->num_rows > 0) {
-    echo '<div class="news">';
-    echo '<div class="container">';
-    while ($row = $result->fetch_assoc()) {
-        echo '<div class="news-holder">';
-        echo '<img src="' . $row["image_path"] . '" alt="' . $row["title"] . '">';
-        echo '<div class="image-text-right">';
-        echo '<h3>' . $row["title"] . '</h3>';
-        echo '<p>' . $row["content"] . '</p>';
-        echo '</div>';
-        echo '</div>';
-    }
-    echo '</div>';
-    echo '</div>';
-} else {
-    echo '<p>No news available.</p>';
-}
-?>
+  <a class="prev" onclick="plusSlidesNews(-1)">❮</a>
+  <a class="next" onclick="plusSlidesNews(1)">❯</a>
 
+</div>
+<br>
+
+<div style="text-align:center">
+  <?php
+  // Display dots dynamically
+  foreach ($allNews as $index => $article) {
+      echo '<span class="dot" onclick="currentSlideNews(' . ($index + 1) . ')"></span>';
+  }
+  ?>
+</div>
 
 
 
@@ -244,19 +251,40 @@ if ($result->num_rows > 0) {
   <!-- SEARCH BAR -->
   <script src="/Web-Programim/jsGlobal/searchbar.js"></script>
 
+  <script>
+    let slideIndexNews = 1;
+    showSlidesNews(slideIndexNews);
 
-  
-    <!-- Hamburger Menu Script-->
-    <script src="/Web-Programim/jsGlobal/hamburger-menu.js"></script>
+    function plusSlidesNews(n) {
+      showSlidesNews(slideIndexNews += n);
+    }
 
-        <!-- DISPLAY  ACCOUNT -->
-    <script src="/Web-Programim/jsGlobal/displayacc.js"></script>
+    function currentSlideNews(n) {
+      showSlidesNews(slideIndexNews = n);
+    }
+
+    function showSlidesNews(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndexNews = 1}
+        if (n < 1) {slideIndexNews = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndexNews-1].style.display = "block";
+        dots[slideIndexNews-1].className += " active";
+      }
+
+  </script>
 
 
-  
 
-  <!-- IMAGE SLIDER  -->
-  <script type="text/javascript">
+   <!-- IMAGE SLIDER  -->
+   <script type="text/javascript">
     var slides = document.querySelectorAll('.slide');
     var nextBtn = document.getElementById('nextBtn');
     var prevBtn = document.getElementById('prevBtn');
@@ -306,6 +334,21 @@ if ($result->num_rows > 0) {
     });
 
   </script>
+
+
+
+
+  
+    <!-- Hamburger Menu Script-->
+    <script src="/Web-Programim/jsGlobal/hamburger-menu.js"></script>
+
+        <!-- DISPLAY  ACCOUNT -->
+    <script src="/Web-Programim/jsGlobal/displayacc.js"></script>
+
+  
+  
+
+ 
 
 
 

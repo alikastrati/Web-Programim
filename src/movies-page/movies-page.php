@@ -61,56 +61,6 @@ $movies = json_decode($response, true)['results'];
     
     
     
-                <div class="filters">
-                    <h3>Filter</h3>
-                    <form action="">
-                        <div class="filter-box">
-                            <input type="radio" value="option1">
-                            <label for="#">Everything</label>
-                        </div>
-                        
-                        <div class="filter-box">
-                            <input type="radio" value="id2">
-                            <label for="#">New Movies</label>
-                        </div>
-        
-    
-                        <div class="filter-box">
-                            <input type="radio" value="option5">
-                            <label for="#">Top Rated</label>
-                        </div>
-    
-                        <div class="filter-box">
-                            <input type="radio" value="option6">
-                            <label for="#">Popular</label>
-                        </div>
-        
-                    </form>
-                    
-    
-                    <div class="release-dates">
-                        <div class="allReleases">
-                            
-                            <input type="checkbox" name="" id="">
-                            <label for="#">Search all Releases?</label>
-                        </div>
-    
-                        <div class="dates">
-                            <div class="from">
-                                <label for="">From</label>
-                                <input type="date" name="" id="">
-                            </div>
-    
-                            <div class="to">
-                                <label for="">To</label>
-                                <input type="date" name="" id="">
-                            </div>
-
-
-                            
-                        </div>
-                    </div>
-                </div>
     
     
                 
@@ -131,7 +81,7 @@ $movies = json_decode($response, true)['results'];
                         <a href="/Web-Programim/src/movie-description/movie.php?type=movie&id=<?= $movie['id'] ?>">
                             <img src="https://image.tmdb.org/t/p/w500<?= $movie['poster_path'] ?>" alt="<?= $movie['title'] ?>">
                         </a>
-                        <p style="width:220px;"><?= $movie['title'] ?></p>
+                        <p style="width: 30vh;"><?= $movie['title'] ?></p>
                         <div class="overlay">
                         <?php
                             // Check if user is logged in

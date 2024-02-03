@@ -54,56 +54,7 @@ $tvShows = json_decode($response, true)['results'];
     
     
     
-                <div class="filters">
-                    <h3>Filter</h3>
-                    <form action="">
-                        <div class="filter-box">
-                            <input type="radio" value="option1">
-                            <label for="#">Everything</label>
-                        </div>
-                        
-                        <div class="filter-box">
-                            <input type="radio" value="id2">
-                            <label for="#">New Movies</label>
-                        </div>
-        
-    
-                        <div class="filter-box">
-                            <input type="radio" value="option5">
-                            <label for="#">Top Rated</label>
-                        </div>
-    
-                        <div class="filter-box">
-                            <input type="radio" value="option6">
-                            <label for="#">Popular</label>
-                        </div>
-        
-                    </form>
-                    
-    
-                    <div class="release-dates">
-                        <div class="allReleases">
-                            
-                            <input type="checkbox" name="" id="">
-                            <label for="#">Search all Releases?</label>
-                        </div>
-    
-                        <div class="dates">
-                            <div class="from">
-                                <label for="">From</label>
-                                <input type="date" name="" id="">
-                            </div>
-    
-                            <div class="to">
-                                <label for="">To</label>
-                                <input type="date" name="" id="">
-                            </div>
-
-
-                            
-                        </div>
-                    </div>
-                </div>
+               
     
     
                 
@@ -126,7 +77,7 @@ $tvShows = json_decode($response, true)['results'];
                             <img src="https://image.tmdb.org/t/p/w500<?= $tvshow['poster_path'] ?>" alt="<?= $tvshow['name'] ?>">
                         </a>
                          
-                         <p class="movie-title" style="width:220px;"><?= $tvshow['name'] ?></p>
+                         <p class="movie-title" style="width: 30vh;"><?= $tvshow['name'] ?></p>
                          <div class="overlay">
                          <?php
                             // Check if user is logged in

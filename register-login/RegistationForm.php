@@ -12,7 +12,7 @@
 
     
         
-  <a href="/Web-Programim/src/index.php" style="margin-top: -670px;margin-right: -30px; text-decoration: none; color: #FFF;"><b>< Home</b></a>
+  <a href="/Web-Programim/src/index.php" class="homeAnchor "style="margin-top: -670px;margin-right: -30px; text-decoration: none; color: #FFF;"><b>< Home</b></a>
     <div class="wrapper">
         <form action="process_registration.php" method="post" id="registrationForm">
             <div class="page-buttons">
@@ -75,7 +75,7 @@
                         </div>
                       
                         <div class="submit-section">
-                          <input type="checkbox"><span style="color: #FFF; margin-left: 15px;">I agree to the terms and conditions</span>
+                          <input type="checkbox" required><span style="color: #FFF; margin-left: 15px;">I agree to the terms and conditions</span>
                           <button type="button" class="btn" id="submit-btn">Register</button>
                         </div>
                       </div>

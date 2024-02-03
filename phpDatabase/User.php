@@ -42,6 +42,9 @@ class User {
     }
 
 
+    
+
+
 
 
     // USER AUTHENTICATION 
@@ -142,13 +145,7 @@ class User {
     }
 
 
-    public function insertNews($userId, $title, $content, $imagePath) {
-        $sql = "INSERT INTO news (user_id, title, content, image_path) VALUES (?,?,?,?)";
-        $stmt = $this->db->getDBConnection()->prepare($sql);
-        $stmt->bind_param("isss", $userId, $title, $content, $imagePath);
-
-        return $stmt->execute();
-    }
+   
    
 }
 ?>

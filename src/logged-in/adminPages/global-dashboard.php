@@ -10,7 +10,7 @@ echo '      <div class="left-panel">
 <a href="\Web-Programim\src\logged-in\adminPages\admin-dashboard.php">Dashboard</a>
 <a href="\Web-Programim\src\logged-in\adminPages\movietv_dashboard.php">Movies/TV Shows</a>
 <a href="\Web-Programim\src\logged-in\adminPages\users-dashboard.php">Users</a>
-<a href="#">News</a>
+<a href="\Web-Programim\src\logged-in\adminPages\news-dashboard.php">News</a>
 <a href="/Web-Programim/src/index.php">&#8617;</a>
 
 </div>

@@ -98,21 +98,6 @@ if (isset($_GET['type'])) {
                 
                 <div class="movie-buttons">
                     <ul class="button-list">
-                        <li> 
-                            <a href="">&#43;</a>
-                        </li>
-
-
-                        <li> 
-                            <a href="">&#9829;</a>
-                        </li>
-
-
-                        <li> 
-                            <a href="">&#x1F516;</a>
-                        </li>
-
-
                         <li>
                             <a href="#" class="trailer">Play Trailer</a>
                         </li>
@@ -140,6 +125,7 @@ if (isset($_GET['type'])) {
 
         <div class="reviews">
         <div class="submit-review">
+            <h2 id="reviewHeader">Leave A Review!</h2>
             <form class="submit-form" action="/Web-Programim/phpDatabase/testReview.php?type=movie&id=<?= $id ?>" method="POST">
                 <input type="text" name="rating" placeholder="Rating">
                 <textarea name="comment" placeholder="Your comment"></textarea>
@@ -152,7 +138,6 @@ if (isset($_GET['type'])) {
               <div class="reviewNavContainer">
                 <div class="nav-review">
                   <a href="">New Reviews</a>
-                  <a href="">Top Reviews</a>
                 </div>
               </div>
       
@@ -178,7 +163,7 @@ if (isset($_GET['type'])) {
                 foreach ($userReviews as $userReview) {
                     echo '<div class="reviewBox">';
                     echo '<div class="account-nav">';
-                    echo '<img src="/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">';
+                    echo '<img src="/Web-Programim/src/imgs/icons/account-pfp.jpg" alt="pfp" style="height: 30px;">';
                     
                     // Display the username
                     echo '<p id="account" style="display: inline;">' . $userReview['username']  . '</p>';

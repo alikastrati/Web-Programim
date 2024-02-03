@@ -11,10 +11,10 @@ echo '
         <div class="footerNav">
             <ul>
                 <li>
-                    <a href="#">Home</a>
+                    <a href="#imgContainer">Home</a>
                 </li>
                 <li>
-                    <a href="#">News</a>
+                    <a href="#news-section">News</a>
                 </li> 
                 <li>
                     <a href="#">Contact Us</a>

@@ -181,6 +181,7 @@ body {
 .movie .container .poster img { 
     position: relative;
     height: 65vh;
+    border: .2px solid #FFF;
     box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);
     -webkit-box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);
     -moz-box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);

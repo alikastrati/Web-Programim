@@ -127,6 +127,20 @@ class Movies {
     }
 
 
+    public function isInWatchlist($userId, $movieId) {
+        $sql = "SELECT COUNT(*) AS count FROM watchlist WHERE user_id = ? AND movie_id = ?";
+        $stmt = $this->mov->getDBConnection()->prepare($sql);
+        $stmt->bind_param("ii", $userId, $movieId);
+        $stmt->execute();
+    
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+    
+        return $row['count'] > 0;
+    }
+    
+
+
 
     public function getUserWatchlist($userId) {
         $sql = "SELECT movies.title, watchlist.image_url FROM movies

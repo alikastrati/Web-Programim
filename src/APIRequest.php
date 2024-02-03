@@ -6,6 +6,9 @@ class APIRequest {
     $this->apiKey = $apiKey;  
   }
 
+  private function isValidApiResponse($data) {
+    return isset($data['results']) && !empty($data['results']);
+  }
 
 
 //   TRENDING SECTION INDEX PHP 
@@ -21,10 +24,11 @@ class APIRequest {
     $trendingMovies = [];
 
     // OUTPUT
-    if (isset($data['results']) && !empty($data['results'])) {
-        $trendingMovies = $data['results'];
+    // OUTPUT
+    if ($this->isValidApiResponse($data)) {
+        return $data['results'];
     } else {
-        echo 'Failed to retrieve data!';
+        return false;
     }
 
     return $trendingMovies;
@@ -117,12 +121,7 @@ class APIRequest {
 
 
 
-//   public function displayMovies() {
-// // Fetch a list of popular movies from TMDb API
-// $apiUrl = "https://api.themoviedb.org/3/movie/popular?api_key=?" .$this->apiKey;
-// $response = file_get_contents($apiUrl);
-// $movies = json_decode($response, true)['results'];
-//   }
+
 
 
 

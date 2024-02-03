@@ -7,6 +7,18 @@ class User {
         $this->db = $db;
     }
 
+    public function getTotalUsers() {
+        $sql = "SELECT COUNT(*) AS total_users FROM user";
+        $result = $this->db->getDBConnection()->query($sql);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+            return $row['total_users'];
+        }
+
+        return 0;
+    }
+
     public function registerUser($name, $username, $email, $password) {
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
@@ -127,11 +139,16 @@ class User {
         }
 
 
-
-
     }
 
 
+    public function insertNews($userId, $title, $content, $imagePath) {
+        $sql = "INSERT INTO news (user_id, title, content, image_path) VALUES (?,?,?,?)";
+        $stmt = $this->db->getDBConnection()->prepare($sql);
+        $stmt->bind_param("isss", $userId, $title, $content, $imagePath);
+
+        return $stmt->execute();
+    }
    
 }
 ?>

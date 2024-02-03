@@ -112,3 +112,6 @@ form .registered-users , .active-users {
     color: #FFF;
     font-weight: 600;
 }
+
+form .registered-users, .active-users{
+    flex-direction: column;}

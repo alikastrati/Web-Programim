@@ -1,9 +1,14 @@
+<?php 
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registation</title>
+    <title>Log In</title>
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="login.css">
@@ -45,11 +50,16 @@
                         <div class="input-field">
                             <input type="password" name="password" placeholder="Password" required>
                         </div>
+                        <?php
+                            if (isset($_SESSION['login_error'])) {
+                                echo '<p class="error-message" style="color: red;">' . $_SESSION['login_error'] . '</p>';
+                            }
+                        ?>
                     </div>
                  
                     <div class="submit-section">
                         <div class="checkbox-div">
-                            <input type="checkbox">
+                            <input type="checkbox" required>
                             <label for="">I Agree!</label>
                         </div>
                        

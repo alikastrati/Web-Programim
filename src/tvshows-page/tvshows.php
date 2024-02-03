@@ -22,6 +22,10 @@ $tvShows = json_decode($response, true)['results'];
      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jolly-Lodger">
+
+
+     <!-- SWEET ALERT LIB  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     
@@ -128,11 +132,11 @@ $tvShows = json_decode($response, true)['results'];
                             // Check if user is logged in
                             if (isset($_SESSION['user_id'])) :
                             ?>
-                            <form method="post" action="/Web-Programim/src/movies-page/watchlist.php">
+                            <form method="post" action="/Web-Programim/src/movies-page/watchlist.php" class="watchlist-form">
                                 <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
                                 <input type="hidden" name="movie_id" value="<?= $tvshow['id'] ?>">
                                 <input type="hidden" name="poster_path" value="https://image.tmdb.org/t/p/w500<?= $tvshow['poster_path'] ?>">
-                                <button type="submit" class="add-to-watchlist" title="Add to Watchlist">+</button>
+                                <button type="submit" class="add-to-watchlist" title="Add to Watchlist" id="watchListBTN">+</button>
                             </form>
                             <?php else : ?>
                             <button class="add-to-watchlist" title="Add to Watchlist"><a style="text-decoration: none;"href="/Web-Programim/register-login/LoginForm.php">+</a></button>
@@ -160,16 +164,23 @@ $tvShows = json_decode($response, true)['results'];
 
 
       
-         <!-- SEARCH BAR  -->
-    <script src="/Web-Programim/src/searchbar.js"></script>
+       <!-- SEARCH BAR -->
+       <script src="/Web-Programim/jsGlobal/searchbar.js"></script>
 
 
-    <!-- HAMBURGER MENU  -->
-    <script src="/Web-Programim/src/hamburger-menu.js"></script>
+        
+<!-- DISPLAY  ACCOUNT -->
+<script src="/Web-Programim/jsGlobal/displayacc.js"></script>
 
-     <!-- DISPLAY  ACCOUNT -->
-     <script src="/Web-Programim/jsGlobal/displayacc.js"></script>
 
+
+<!-- Hamburger Menu Script-->
+<script src="/Web-Programim/jsGlobal/hamburger-menu.js"></script>
+
+
+
+     <!-- ALERT MESSAGE  -->
+     <script src="/Web-Programim/jsGlobal/sweetalert.js"></script>
 
 
     <script>

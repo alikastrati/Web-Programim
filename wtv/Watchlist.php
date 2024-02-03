@@ -51,8 +51,8 @@ $db->closeConnection();
                     <?php foreach ($userWatchlist as $movie): ?>
                         <div class="img">
                         <img src="<?php echo $movie['image_url']; ?>" alt="">
-        <               p><?php echo $movie['title']; ?></>
-                    </div>
+                        <p><?php echo $movie['title']; ?></p>
+                        </div>
                     <?php endforeach; ?>
                 </div>
             </div>

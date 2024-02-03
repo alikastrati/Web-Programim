@@ -83,7 +83,7 @@ body {
 }
 
 .mainContainer .movies-list .container .images-row img {
-    height: 35vh;
+    height: 45vh;
     width: 30vh;
     border-radius: 20px;
     box-shadow: -2px 7px 44px -22px rgba(178,178,178,0.75);

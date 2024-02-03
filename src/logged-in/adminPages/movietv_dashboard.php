@@ -1,7 +1,6 @@
 <?php 
 require_once('/xampp/htdocs/Web-Programim/phpDatabase/Database.php');
 require_once('/xampp/htdocs/Web-Programim/phpDatabase/User.php'); 
-require_once('C:\xampp\htdocs\Web-Programim\phpDatabase\Movies.php');
 
 $db = new Database();
 $conn = $db->getDBConnection();

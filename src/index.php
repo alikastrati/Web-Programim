@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 require_once 'APIRequest.php';
 
 $apiKeyU = '9a23cb65445bdb0713ad45e54d8b7096';
@@ -76,6 +78,7 @@ $trendingMovies = $apiRequest->getTrendingMovies();
   <!-- TOP 100 SECTION START -->
 <div class="top100">
   <p id="paragraph">Trending</p>
+  <div class="maincontainer">
   <div class="container">
     <?php foreach ($trendingMovies as $movie) : ?>
       <div class="top100-img">
@@ -86,6 +89,8 @@ $trendingMovies = $apiRequest->getTrendingMovies();
       </div>
     <?php endforeach; ?>
   </div>
+  </div>
+  
 </div>
 <!-- TOP 100 SECTION END -->
   
@@ -111,7 +116,6 @@ $trendingMovies = $apiRequest->getTrendingMovies();
           <div class="reviewNavContainer">
             <div class="nav-review">
               <a href="">New Reviews</a>
-              <a href="">Top Reviews</a>
             </div>
           </div>
   
@@ -203,51 +207,28 @@ $trendingMovies = $apiRequest->getTrendingMovies();
 
 
     <!-- MOVIE/TV SHOWS NEWS  -->
-    
-    <div class="news">
-      <div class="container">
-        <div class="left-side-news">
-        
-          <img src="/src/imgs/news/1246139840.webp" alt="news1">
-          <div class="image-text">
-            <h3>News 1</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio perferendis quia amet doloribus fugiat dolores, repudiandae voluptates omnis nemo velit architecto eveniet commodi beatae quibusdam modi officiis laudantium temporibus cum delectus. Quos vitae voluptates pariatur facilis! Cupiditate neque ullam quasi!</p>
-          </div>  
-        </div>
+    <?php
+// Assuming you have a method in your Database class to execute SELECT queries
+$result = $db->getDBConnection()->query("SELECT * FROM news");
 
-        <div class="right-side-news">
-          <div class="news-holder">
-
-            <img src="/src/imgs/news/799E0673-DA74-4903-AD0D-47F0B828B74A.jpeg" alt="news2">
-            <div class="image-text-right">
-              <h3>News 2</h3>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis, aperiam.</p>
-            </div>  
-          </div>
-
-
-          <div class="news-holder">
-            
-            <img src="/src/imgs/news/actor_roundtable_bts_a.webp" alt="news3">
-            <div class="image-text-right">
-              <h3>News 3</h3>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, optio.</p>
-            </div>  
-          </div>
-
-
-          <div class="news-holder">
-            
-            <img src="/src/imgs/news/Andrew-Garfield-Zendaya1.jpg" alt="news4">
-            <div class="image-text-right">
-              <h3>News 4</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, beatae!</p>
-            </div>  
-          </div>
-
-        </div>
-      </div>
-    </div>
+if ($result->num_rows > 0) {
+    echo '<div class="news">';
+    echo '<div class="container">';
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="news-holder">';
+        echo '<img src="' . $row["image_path"] . '" alt="' . $row["title"] . '">';
+        echo '<div class="image-text-right">';
+        echo '<h3>' . $row["title"] . '</h3>';
+        echo '<p>' . $row["content"] . '</p>';
+        echo '</div>';
+        echo '</div>';
+    }
+    echo '</div>';
+    echo '</div>';
+} else {
+    echo '<p>No news available.</p>';
+}
+?>
 
 
 
@@ -268,7 +249,7 @@ $trendingMovies = $apiRequest->getTrendingMovies();
     <!-- Hamburger Menu Script-->
     <script src="/Web-Programim/jsGlobal/hamburger-menu.js"></script>
 
-    <!-- DISPLAY  ACCOUNT -->
+        <!-- DISPLAY  ACCOUNT -->
     <script src="/Web-Programim/jsGlobal/displayacc.js"></script>
 
 

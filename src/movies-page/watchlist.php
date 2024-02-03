@@ -1,5 +1,5 @@
 <?php
-session_start(); 
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userId = $_POST['user_id'];
@@ -10,19 +10,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once 'C:\xampp\htdocs\Web-Programim\phpDatabase\Database.php';
 
     $db = new Database();
-
     $movies = new Movies($db);
 
-    if ($movies->addToWatchlist($userId, $movieId, $imageUrl)) {
-        echo "Movie added to watchlist successfully!";
+    if ($movies->isInWatchlist($userId, $movieId, $imageUrl)) {
+        $response = array(
+            'status' => 'error',
+            'message' => 'This movie is already in the watchlist!'
+        );
     } else {
-        echo "Error adding movie to watchlist.";
+        if ($movies->addToWatchlist($userId, $movieId, $imageUrl)) {
+            $response = array(
+                'status' => 'success',
+                'message' => 'Movie added to watchlist successfully!'
+            );
+        } else {
+            $response = array(
+                'status' => 'error',
+                'message' => 'Error adding movie to watchlist.'
+            );
+        }
     }
 
     $db->closeConnection();
 
+    header('Content-Type: application/json');
+    echo json_encode($response);
 } else {
-    echo "Invalid request method!";
-}
+    $response = array(
+        'status' => 'error',
+        'message' => 'Invalid request method!'
+    );
 
+    header('Content-Type: application/json');
+    echo json_encode($response);
+}
 ?>

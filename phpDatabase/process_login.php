@@ -32,8 +32,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         exit();
     } else {
-        echo 'Invalid Credentials.';
-}
+        $_SESSION['login_error'] = 'Invalid Email/Password combination.';
+var_dump($_SESSION['login_error']); // or echo $_SESSION['login_error'];
+header("Location: /Web-Programim/register-login/LoginForm.php");
+exit();
+
+    }
 
     $db->closeConnection();
 } else {

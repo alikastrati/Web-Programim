@@ -1,3 +1,15 @@
+<?php 
+   require_once('/xampp/htdocs/Web-Programim/phpDatabase/Database.php');
+   require_once('/xampp/htdocs/Web-Programim/phpDatabase/User.php'); 
+   require_once('/xampp/htdocs/Web-Programim/src/APIRequest.php');
+   
+
+
+   $db = new Database();
+   $user = new User($db);
+   $apiRequest = new APIRequest('9a23cb65445bdb0713ad45e54d8b7096');
+ ?>
+    
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -22,18 +34,30 @@
 
             <!-- RIGHT PANNEL  -->
             <div class="right-panel">
-                    <form action="#" id="dashboard-form">
-                        <div class="registered-users">
-                        <label for="">Total Users</label>
-                        
-                        </div>
+            <form action="#" id="dashboard-form">
+                <div class="registered-users">
+                    <label for="">Total Users:</label>
+                    <?php
 
+                    $totalUsers = $user->getTotalUsers();
 
-                        <div class="active-users">
-                            <label for="">Active Users</label>
-                        
-                        </div>
-                    </form>
+                    echo '<span>' . $totalUsers . '</span>';
+                    ?>
+                </div>
+
+                <div class="active-users">
+                    <label for="">API Requests</label>
+                    <?php  
+                    $trendingMovies = $apiRequest->getTrendingMovies();
+ 
+ 
+                    echo '<p>' . ($trendingMovies !== false ? 'True' : 'False') . '</p>';
+ 
+                    
+                    
+                    ?>
+                </div>
+            </form>
 
                 
             </div>

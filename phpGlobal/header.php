@@ -19,6 +19,8 @@ echo '<div class="navBar" id="navbar">
         </div>
 
         <div class="lists" id="myTopNav">
+            <div class="lists-bg" id="listsBg"></div>
+
             <a href="/Web-Programim/src/index.php" class="active">Home</a>
             <a href="/Web-Programim/src/movies-page/movies-page.php">Movies</a>
             <a href="/Web-Programim/src/tvshows-page/tvshows.php">TV Shows</a>';

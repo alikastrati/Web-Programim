@@ -234,11 +234,11 @@ nav .search-field input {
         right: 0;
         height: 0;
         top: 52px;
-        background: rgba(255, 255, 255, 0.02);
+        background: rgba(37, 92, 133, 0.15);
         border-radius: 16px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(5.9px);
-        -webkit-backdrop-filter: blur(5.9px);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
         border: 1px solid rgba(255, 255, 255, 0.3);
         border-top: none;
         width: 100%;
@@ -255,6 +255,7 @@ nav .search-field input {
     .lists a{
         color: #fff;
         font-size: 3vh;
+        background: none;
     }
 
 

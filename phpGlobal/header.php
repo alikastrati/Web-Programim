@@ -9,13 +9,7 @@ echo '<div class="navBar" id="navbar">
     <nav>
         <div class="navLogo">
             <p><a href="/Web-Programim/src/index.php">fl<span>oat</a></span></p>
-            <div class="search-field">
-                <a href="#" id="toggleSearch">&#9740;</a>
-                <div class="search-bar-container" id="searchContainer">
-                    <input type="text" name="search-bar" id="searchBar" placeholder="Search">
-                    <button id="closeSearch">Close</button>
-                </div>
-            </div>
+            
         </div>
 
         <div class="lists" id="myTopNav">

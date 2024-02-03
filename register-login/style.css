@@ -18,13 +18,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    background-color: #111111;
     background-size: cover;
     background-position: center;
-    background-color: #111111 ;
     background-image: url(/Web-Programim/src/imgs/nav/pic2.jpg);
-    
-}
+    height: 100vh;
+    margin: 0;
+  }
+
+
 
 form {
     background-color: var(--primary);
@@ -37,9 +39,9 @@ h1 > span {
 
 
 .wrapper {
-    width: 950px;
-    height: 650px;
-    background-color: var(--primary);    
+    width: 100%;
+    max-width: 950px;
+    background-color: var(--primary);
     border-radius: 10px;
     color: black;
     padding: 40px 35px 18px;
@@ -47,11 +49,10 @@ h1 > span {
     margin-left: -30px;
     box-sizing: border-box;
     position: relative;
-    box-shadow: -2px -1px 49px 27px rgba(0,0,0,0.75);
-    -webkit-box-shadow: -2px -1px 49px 27px rgba(0,0,0,0.75);
-    -moz-box-shadow: -2px -1px 49px 27px rgba(0,0,0,0.75);
-    
-}
+    box-shadow: -2px -1px 49px 27px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -2px -1px 49px 27px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -2px -1px 49px 27px rgba(0, 0, 0, 0.75);
+  }
 
 .wrapper .title {
     width: 570px;
@@ -118,29 +119,29 @@ h1 > span {
 }
 
 .wrapper h1 {
-   font-size: 36px;
+    font-size: 36px;
     text-align: center;
     margin-bottom: 20px;
     color: black;
-}
+  }
 
-.wrapper .input-box {
+  .wrapper .input-box {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     background-color: var(--primary);
     width: 600px;
-
-}
-.input-box .input-field {
+  }
+  
+  .input-box .input-field {
     position: relative;
-    width: 700px;
+    width: 100%;
     height: 50%;
     border-radius: 6px;
     background-color: var(--primary);
     margin: 13px 0;
-}
-.input-box .input-field input {
+  }
+  .input-box .input-field input {
     width: 80%;
     padding: 8px 10px 9px 35px;
     height: 35px;
@@ -151,7 +152,7 @@ h1 > span {
     color: #FFF;
     border-radius: 6px;
     padding: 15px 15px 15px 40px;
-}
+  }
 
 .input-box .input-field input::placeholder {
     color: #FFF; 
@@ -170,26 +171,21 @@ h1 > span {
 .wrapper .container .left-section .input-box .submit-section {margin-top: 20px;}
 
 .wrapper .btn {
-    width: 50%;
-    height: 60px;
-    margin-top: 40px;
-    background-color: #A98F76;;
-    border: none;
-    outline: none;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    font-size: 16px;
-    color: white;
-    font-weight: 600;
+  width: 50%;
+  height: 60px;
+  margin-top: 40px;
+  background-color: #A98F76;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
 }
 
-@media (max-width: 600px) {
-    .container {
-        width: 500px;
-        flex-direction: column;
-    }
-}
+
 
 
 .checkbox {
@@ -219,4 +215,85 @@ h1 > span {
 
 .error-box {
     color: #c90000;
+}
+
+
+
+
+/* Add this media query for smaller screens */
+@media screen and (max-width: 768px) {
+    body {
+        height: auto;
+    }
+
+    .homeAnchor {
+        display: none;
+    }
+
+    .wrapper {
+        max-width: 100%;
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .wrapper .title {
+        width: 100%;
+        text-align: center;
+        margin-left: 150px;
+    }
+
+    .wrapper .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .wrapper h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .wrapper .input-box {
+        width: 100%;
+    }
+
+    .wrapper .container .left-section .input-box .input-field {
+        width: 100%;
+    }
+
+    .wrapper .container .left-section .input-box .name-surname,
+    .wrapper .container .left-section .input-box .emails,
+    .wrapper .container .left-section .input-box .password-cnfPassowrd {
+        flex-direction: column;
+    }
+
+    .wrapper .container .left-section .input-box .name-surname .input-field,
+    .wrapper .container .left-section .input-box .emails .input-field,
+    .wrapper .container .left-section .input-box .password-cnfPassowrd .input-field {
+        width: 100%;
+    }
+
+    .wrapper .btn {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .social-icons img {
+        width: 40px;
+        height: 40px;
+        margin: 6px 7px;
+    }
+}
+
+/* Adjust this media query for even smaller screens if needed */
+@media screen and (max-width: 438px) {
+    .wrapper {
+        max-width: 300px;
+        height: auto;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .homeAnchor {
+        display: none;
+    }
 }

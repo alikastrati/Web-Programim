@@ -72,3 +72,25 @@
     background-color: #5f5f5f;
     
 }
+
+
+
+@media only screen and (max-width: 768px) {
+    .mainContainer {
+        flex-direction: column;
+    }
+
+    .mainContainer .left-panel {
+        font-size: 1rem;
+    }
+
+    .mainContainer .right-panel {
+        height: auto;
+    }
+
+    form .registered-users,
+    form .active-users {
+        height: auto;
+        margin-bottom: 20px;
+    }
+}

@@ -156,3 +156,31 @@ table.greyGridTable {
     width: 65%;
     
   }
+
+
+
+  
+@media only screen and (max-width: 768px) {
+  .mainContainer {
+      flex-direction: column;
+  }
+
+  .mainContainer .right-panel {
+      height: auto;
+      margin-top: 20px; 
+  }
+
+  .mainContainer .right-panel .user-form {
+      margin: 0 auto; 
+      width: 80%; 
+  }
+
+  .mainContainer .right-panel .user-form input,
+  .mainContainer .right-panel .user-form button {
+      width: 100%; 
+  }
+
+  .mainContainer .right-panel h2 {
+      text-align: center; 
+  }
+}

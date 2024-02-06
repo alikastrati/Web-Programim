@@ -1,3 +1,13 @@
+<?php 
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+  header("Location: /Web-Programim/src/index.php");
+  exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,6 +87,9 @@
                         <div class="submit-section">
                           <input type="checkbox" required><span style="color: #FFF; margin-left: 15px;" required>I agree to the terms and conditions</span>
                           <button type="submit" class="btn" id="submit-btn">Register</button>
+                           <div id="emailExistsError" style="color: red; margin-top: 10px; <?php echo isset($_SESSION['registration_error']) ? 'display: block;' : 'display: none;'; ?>">
+        <?php echo isset($_SESSION['registration_error']) ? $_SESSION['registration_error'] : ''; ?>
+    </div>
                         </div>
                       </div>
                 </div>

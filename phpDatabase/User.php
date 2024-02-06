@@ -36,6 +36,19 @@ class User {
     }
 
 
+    public function userEmailExist($email) {
+        $sql = "SELECT COUNT(*) AS total FROM user WHERE email = ?";
+        $stmt = $this->db->getDBConnection()->prepare($sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->bind_result($total);
+        $stmt->fetch();
+        $stmt->close();
+        return $total > 0;
+    }
+    
+
+
 
     public function getUserId() {
         return $this->db->getDBConnection()->insert_id;

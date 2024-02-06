@@ -1,5 +1,6 @@
 <?php
 require_once('C:\xampp\htdocs\Web-Programim\phpDatabase\Database.php');
+include('C:\xampp\htdocs\Web-Programim\src\logged-in\phpScripts\check_user.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id'])) {
     $userId = $_POST['user_id'];

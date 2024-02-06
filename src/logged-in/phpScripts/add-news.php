@@ -25,7 +25,7 @@ session_start();
         <!-- RIGHT PANEL  -->
         <div class="right-panel">
             <h2>Add News</h2>    
-            <form class="user-form" method="POST" action="\Web-Programim\src\logged-in\phpScripts\submit-news.php" target="_self">
+            <form class="user-form" method="POST" action="\Web-Programim\src\logged-in\phpScripts\submit-news.php" target="_self" onsubmit="return validateForm()">
                 <fieldset>
                     <label for="text">Title:</label><br>
                     <input type="text" id="title" name="title"><br>
@@ -38,5 +38,22 @@ session_start();
             </form>
         </div>
     </div>
+
+
+    <script>
+         function validateForm() {
+            var title = document.getElementById('title').value.trim();
+            var content = document.getElementById('content').value.trim();
+            var imagePath = document.getElementById('image_path').value.trim();
+
+            if (title === '' || content === '' || imagePath === '') {
+                alert('Please fill in all fields');
+                return false;
+            }
+            return true;
+        }
+
+
+    </script>
 </body>
 </html>

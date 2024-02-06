@@ -14,35 +14,42 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-
     // PASSWORD HASH 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     $db = new Database();
     $conn = $db->getDBConnection();
 
-
-    // INSERT USER TO DB 
-    $sql = "INSERT INTO user (name, username, email, password, role) VALUES (?,?,?,?,?)" ;
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssss", $name, $username, $email, $hashedPassword, $role);
-
-
-    if($stmt->execute()) {
+    // Check if email already exists
+    $sql_check_email = "SELECT * FROM user WHERE email = ?";
+    $stmt_check_email = $conn->prepare($sql_check_email);
+    $stmt_check_email->bind_param("s", $email);
+    $stmt_check_email->execute();
+    $result_check_email = $stmt_check_email->get_result();
+    if ($result_check_email->num_rows > 0) {
+        echo 'Email Already Exists!';
         header("Location: \Web-Programim\src\logged-in\adminPages\users-dashboard.php");
-        exit(); 
-     } 
-    else {
-        echo 'Error adding a user: ' .$stmt->error;
+        exit();
+       
     }
 
-    $stmt->close();
+    // INSERT USER TO DB 
+    $sql_insert_user = "INSERT INTO user (name, username, email, password, role) VALUES (?,?,?,?,?)" ;
+    $stmt_insert_user = $conn->prepare($sql_insert_user);
+    $stmt_insert_user->bind_param("sssss", $name, $username, $email, $hashedPassword, $role);
+
+    if($stmt_insert_user->execute()) {
+        header("Location: \Web-Programim\src\logged-in\adminPages\users-dashboard.php");
+        exit(); 
+    } else {
+        echo 'Error adding a user: ' .$stmt_insert_user->error;
+    }
+
+    $stmt_insert_user->close();
+    $stmt_check_email->close();
     $db->closeConnection();
 
-}
-else {
+} else {
     echo 'Invalid Request.';
 }
-
-
 ?>

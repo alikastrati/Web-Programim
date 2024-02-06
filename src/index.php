@@ -180,7 +180,7 @@ $trendingMovies = $apiRequest->getTrendingMovies();
           <div class="info-joinUs">
             <h2>Join <span style="display: inline; font-family: 'Kanit';">Us</span></h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, quibusdam?</p>
-            <a href="/register-login/RegistationForm.html">Register Now!</a>
+            <a href="/Web-Programim/register-login/RegistationForm.php">Register Now!</a>
           </div>
 
 
@@ -207,20 +207,21 @@ $trendingMovies = $apiRequest->getTrendingMovies();
       <div class="slideshow-container" id="news-section">
 
   <?php
-  require_once('\xampp\htdocs\Web-Programim\phpDatabase\News.php');
-  // Instantiate News class
-  $news = new News($db);
-  // Fetch all news
-  $allNews = $news->getAllNews();
+    require_once('\xampp\htdocs\Web-Programim\phpDatabase\News.php');
+    // Instantiate News class
+    $news = new News($db);
+    // Fetch all news
+    $allNews = $news->getAllNews();
 
   // Display news dynamically
-  foreach ($allNews as $index => $article) {
-      echo '<div class="mySlides fade">';
-      echo '<div class="numbertext">' . ($index + 1) . ' / ' . count($allNews) . '</div>';
-      echo '<img src="' . $article['image_path'] . '" style="width:100%">';
-      echo '<div class="text">' . $article['title'] . '</div>';
-      echo '</div>';
-  }
+     foreach ($allNews as $index => $article) {
+         echo '<div class="mySlides fade">';
+         echo '<div class="numbertext">' . ($index + 1) . ' / ' . count($allNews) . '</div>';
+         echo '<img src="' . $article['image_path'] . '" style="width:100%">';
+         echo '<div class="text">' . $article['title'] . '</div>';
+         echo '<div class="content">' . $article['content'] . '</div>';
+         echo '</div>';
+     }
   ?>
 
   <a class="prev" onclick="plusSlidesNews(-1)">❮</a>

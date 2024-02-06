@@ -99,7 +99,7 @@ if (isset($_GET['type'])) {
                 <div class="movie-buttons">
                     <ul class="button-list">
                         <li>
-                            <a href="#" class="trailer">Play Trailer</a>
+                        <a href="<?= isset($trailers[0]) ? 'https://www.youtube.com/watch?v=' . $trailers[0]['key'] : '#' ?>" class="trailer">Play Trailer</a>
                         </li>
                     </ul>
                 </div>

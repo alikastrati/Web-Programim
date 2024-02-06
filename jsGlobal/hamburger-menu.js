@@ -12,10 +12,4 @@
     openHam.addEventListener('click', () => hamburgerEvent("flex", "block", "none"));
     closeHam.addEventListener('click', () => hamburgerEvent("none", "none", "block"));
 
-    document.getElementById('openHam').addEventListener('click', function() {
-        document.getElementById('listsBg').style.display = 'block'; // Show blurred background
-    });
-    
-    document.getElementById('closeHam').addEventListener('click', function() {
-        document.getElementById('listsBg').style.display = 'none'; // Hide blurred background
-    });
+ 

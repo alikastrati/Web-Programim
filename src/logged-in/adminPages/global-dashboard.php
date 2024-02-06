@@ -1,4 +1,5 @@
 <?php 
+include('C:\xampp\htdocs\Web-Programim\src\logged-in\phpScripts\check_user.php');
 echo '      <div class="left-panel">
 <div class="profile-info">
         <img src="/Web-Programim/src/logged-in/imgs/blank-profile-picture-973460_960_720.webp" alt="IMAGE">

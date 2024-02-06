@@ -2,6 +2,7 @@
    require_once('/xampp/htdocs/Web-Programim/phpDatabase/Database.php');
    require_once('/xampp/htdocs/Web-Programim/phpDatabase/User.php'); 
    require_once('/xampp/htdocs/Web-Programim/src/APIRequest.php');
+   include('C:\xampp\htdocs\Web-Programim\src\logged-in\phpScripts\check_user.php');
    
 
 

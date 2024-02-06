@@ -1,40 +1,41 @@
 <?php
+session_start();
 require_once('Database.php');
 require_once('User.php');
 
-
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // GET USER INPUT 
+    // Get user input
     $name = $_POST['name'];
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-
-    // DB CONNECTION 
+    // DB Connection
     $db = new Database();
 
-    // USER OBJECT 
-    $user = new user($db);
+    // User object
+    $user = new User($db);
 
+    // Check if email exists
+    if($user->userEmailExist($email)) {
+        $_SESSION['registration_error'] = "Email already exists!";
+        header("Location: /Web-Programim/register-login/RegistationForm.php");
+        exit();
+    }
 
-    // REGISTER USER 
+    // Register user
     if($user->registerUser($name, $username, $email, $password)) {
         $userID = $user->getUserId();
         setcookie("user_id", $userID, time() + 3600, "/");
         header("Location: /Web-Programim/register-login/LoginForm.php");
         exit();
-        
     } else {
         echo 'Error : Registration Failed!';
     }
 
-
-    // CLOSE DB CONNECTION 
+    // Close DB Connection
     $db->closeConnection();
 } else {
     echo 'Invalid request method';
 }
-
-
 ?>
